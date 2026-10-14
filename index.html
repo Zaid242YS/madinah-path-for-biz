@@ -1,0 +1,1915 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Madinah Viability Compass | Creed-to-Commerce™</title>
+<meta name="description" content="A Creed-to-Commerce™ decision tool for new business owners in Madinah, Saudi Arabia. Test your lease, customer problem and capital with real numbers before you commit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout concept: a green-and-gold masthead over a six-stage journey rail; each stage is a form on the left
+   and a live reading on the right, ending in a dashboard that scores the venture. */
+:root{
+  --bg:#f1f5f0; --surface:#ffffff; --soft:#eaf0ea; --ink:#10261c; --ink2:#44574d; --mute:#5f7167;
+  --line:#cfdad1; --grid:#dfe7e1; --band:#cfe6da;
+  --brand:#14573f; --brand-ink:#ffffff; --gold:#a97c14; --gold-ink:#7d5a0b; --gold-bg:#f5ecd2;
+  --mast:#0f3d2e; --mast-ink:#f4f0e1; --mast-gold:#e3c372; --mast-line:#2b5a47;
+  --s1:#1e7a55; --s2:#c48a12; --s3:#2f6db5; --s4:#a9487a;
+  --good:#1e7a55; --warn:#b9770e; --serious:#c2570c; --critical:#b3261e;
+  --good-bg:#dcefe4; --warn-bg:#f8ebcd; --serious-bg:#f9e0d0; --critical-bg:#f7dbd8;
+  --focus:#2f6db5; --tip-bg:#10261c; --tip-ink:#f1f5f0;
+  --display:'Amiri','Noto Naskh Arabic','Times New Roman',serif;
+  --body:'Source Sans 3','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1812; --surface:#132a20; --soft:#1a3529; --ink:#e8efe9; --ink2:#b9c9be; --mute:#93a89b;
+    --line:#2a463a; --grid:#21392e; --band:#1f4a39;
+    --brand:#3aa57a; --brand-ink:#08150f; --gold:#e3c372; --gold-ink:#e3c372; --gold-bg:#3a3217;
+    --mast:#0a2a1f; --mast-line:#25503f;
+    --s1:#2f9a6e; --s2:#b8871a; --s3:#4f8fd8; --s4:#c4608f;
+    --good:#46b783; --warn:#e0a030; --serious:#e8803a; --critical:#ef6b62;
+    --good-bg:#17382b; --warn-bg:#3a3217; --serious-bg:#41261a; --critical-bg:#42201d;
+    --focus:#7db3ee; --tip-bg:#e8efe9; --tip-ink:#10261c;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b1812; --surface:#132a20; --soft:#1a3529; --ink:#e8efe9; --ink2:#b9c9be; --mute:#93a89b;
+  --line:#2a463a; --grid:#21392e; --band:#1f4a39;
+  --brand:#3aa57a; --brand-ink:#08150f; --gold:#e3c372; --gold-ink:#e3c372; --gold-bg:#3a3217;
+  --mast:#0a2a1f; --mast-line:#25503f;
+  --s1:#2f9a6e; --s2:#b8871a; --s3:#4f8fd8; --s4:#c4608f;
+  --good:#46b783; --warn:#e0a030; --serious:#e8803a; --critical:#ef6b62;
+  --good-bg:#17382b; --warn-bg:#3a3217; --serious-bg:#41261a; --critical-bg:#42201d;
+  --focus:#7db3ee; --tip-bg:#e8efe9; --tip-ink:#10261c;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--body);font-variant-numeric:tabular-nums;min-height:100vh}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.2;margin:0;text-wrap:balance;color:var(--ink)}
+h2{font-size:28px;font-weight:700}
+h3{font-size:21px;font-weight:700}
+h4{font-family:var(--body);font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);font-weight:700}
+p{margin:0}
+a{color:var(--brand)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1220px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.muted{color:var(--mute)}
+.small{font-size:14px}
+.num{font-variant-numeric:tabular-nums}
+
+/* masthead */
+.mast{background:var(--mast);color:var(--mast-ink);border-bottom:3px solid var(--mast-gold)}
+.mast .wrap{padding-block:18px 18px;display:grid;gap:14px}
+.basmala{font-family:var(--display);direction:rtl;text-align:center;font-size:clamp(28px,5vw,40px);line-height:1.5;color:var(--mast-gold)}
+.mast-main{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-end;justify-content:space-between}
+.mast h1{color:var(--mast-ink);font-size:clamp(28px,4.4vw,44px);font-weight:700}
+.mast .kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mast-gold);font-weight:700;margin-bottom:4px}
+.mast .tagline{max-width:60ch;color:#cfe0d5;margin-top:6px}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 16px;border-radius:6px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:600;font-size:15px;text-decoration:none}
+.btn:hover{background:var(--soft)}
+.btn.primary{background:var(--mast-gold);border-color:var(--mast-gold);color:#10261c}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.onmast{background:transparent;border-color:var(--mast-line);color:var(--mast-ink)}
+.btn.onmast:hover{background:rgba(255,255,255,.08)}
+.btn.danger{color:var(--critical);border-color:var(--critical)}
+.btn.sm{min-height:32px;padding:4px 12px;font-size:14px}
+.btn[disabled]{opacity:.55;cursor:wait}
+
+/* banner */
+.banner{background:var(--gold-bg);border-bottom:1px solid var(--line);color:var(--ink)}
+.banner .wrap{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding-block:10px}
+.banner b{color:var(--gold-ink)}
+.banner[hidden]{display:none}
+
+/* journey rail */
+.rail{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.rail .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin;padding-block:8px}
+.tab{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:8px;border:1px solid transparent;background:none;cursor:pointer;text-align:left}
+.tab:hover{background:var(--soft)}
+.tab .rn{font-family:var(--display);font-weight:700;font-size:18px;min-width:26px;color:var(--gold-ink)}
+.tab .tn{font-weight:700;line-height:1.1;display:block}
+.tab .ts{font-size:12px;color:var(--mute);display:block;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--brand);color:var(--brand-ink)}
+.tab[aria-selected="true"] .rn,.tab[aria-selected="true"] .ts{color:var(--brand-ink);opacity:.9}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--line);flex:0 0 auto}
+.dot.good{background:var(--good)}.dot.warn{background:var(--warn)}.dot.serious{background:var(--serious)}.dot.critical{background:var(--critical)}
+.tab[aria-selected="true"] .dot{box-shadow:0 0 0 2px var(--brand-ink)}
+.tabsep{flex:0 0 1px;background:var(--line);margin:4px 6px}
+
+/* live strip */
+.live{background:var(--soft);border-bottom:1px solid var(--line)}
+.live .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(4,minmax(0,1fr));gap:8px 18px;padding-block:12px;align-items:center}
+.live .verdict{display:flex;align-items:center;gap:12px;min-width:0}
+.live .vtext{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.15}
+.stat{min-width:0}
+.stat .k{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:700}
+.stat .v{font-size:22px;font-weight:700;line-height:1.2}
+.stat .s{font-size:13px;color:var(--mute)}
+@media (max-width:900px){.live .wrap{grid-template-columns:1fr 1fr}.live .verdict{grid-column:1/-1}}
+
+/* panels */
+main{padding-block:24px 48px}
+.panel{display:none}
+.panel.on{display:block}
+.phead{display:grid;gap:6px;margin-bottom:18px;max-width:78ch}
+.phead .eyebrow{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);font-weight:700}
+.stage{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start}
+.stage>.col{display:grid;gap:16px;min-width:0}
+.stage .sticky{position:sticky;top:84px}
+@media (max-width:960px){.stage{grid-template-columns:minmax(0,1fr)}.stage .sticky{position:static}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;min-width:0}
+.card.flat{background:var(--soft);border-color:transparent}
+.card h3{margin-bottom:4px}
+.card .lede{color:var(--ink2);margin-bottom:14px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.field{display:grid;gap:4px;min-width:0;align-content:start}
+.field label,.field .lbl{font-weight:600;font-size:14px}
+.field .hint{font-size:13px;color:var(--mute)}
+.inp{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden;min-width:0}
+.inp:focus-within{border-color:var(--focus);box-shadow:0 0 0 2px color-mix(in srgb,var(--focus) 30%,transparent)}
+.inp input,.inp select{border:0;background:transparent;padding:9px 10px;min-width:0;width:100%;outline:none}
+.inp select{cursor:pointer}
+.inp .u{display:flex;align-items:center;padding:0 10px;background:var(--soft);color:var(--mute);font-size:13px;font-weight:600;white-space:nowrap}
+textarea.ta{width:100%;border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:9px 10px;resize:vertical;min-height:72px;line-height:1.45}
+textarea.ta:focus{outline:none;border-color:var(--focus);box-shadow:0 0 0 2px color-mix(in srgb,var(--focus) 30%,transparent)}
+.check{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:8px;cursor:pointer;background:var(--surface)}
+.check:has(input:checked){background:var(--good-bg);border-color:var(--good)}
+.check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--brand)}
+.range{width:100%;accent-color:var(--brand)}
+
+/* tables */
+.tscroll{overflow-x:auto;margin-inline:-4px;padding-inline:4px}
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:700;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:4px 4px;border-bottom:1px solid var(--grid);vertical-align:middle}
+.tbl td .inp{border-color:transparent;background:transparent}
+.tbl td .inp:hover{border-color:var(--line)}
+.tbl td .inp:focus-within{background:var(--surface)}
+.tbl tfoot td{font-weight:700;padding:8px;border-bottom:0}
+.tbl.mini td,.tbl.mini th{padding:5px 8px}
+.tbl .r{text-align:right}
+.rm{background:none;border:0;cursor:pointer;color:var(--mute);width:32px;height:32px;border-radius:6px;font-size:18px;line-height:1}
+.rm:hover{background:var(--critical-bg);color:var(--critical)}
+.addrow{margin-top:10px}
+
+/* pills, meters */
+.pill{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.pill.good{background:var(--good-bg);color:var(--good)}.pill.warn{background:var(--warn-bg);color:var(--warn)}
+.pill.serious{background:var(--serious-bg);color:var(--serious)}.pill.critical{background:var(--critical-bg);color:var(--critical)}
+.pill.critical::before{border-radius:1px;transform:rotate(45deg)}
+.pill.warn::before,.pill.serious::before{border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.meter{height:10px;border-radius:5px;background:var(--grid);overflow:hidden}
+.meter>i{display:block;height:100%;border-radius:5px;background:var(--s1)}
+.meter.good>i{background:var(--good)}.meter.warn>i{background:var(--warn)}.meter.critical>i{background:var(--critical)}.meter.serious>i{background:var(--serious)}
+.big{font-family:var(--display);font-size:38px;font-weight:700;line-height:1.1}
+.kv{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:baseline}
+.kv dt{color:var(--ink2)}
+.kv dd{margin:0;font-weight:700;text-align:right}
+dl.kv{margin:0}
+.readbox{display:grid;gap:12px}
+.rows{display:grid;gap:10px}
+.rowline{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+.note{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:10px 0;border-bottom:1px solid var(--grid)}
+.note:last-child{border-bottom:0}
+.note .st{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.callout{border-left:4px solid var(--gold);background:var(--gold-bg);padding:12px 14px;border-radius:0 8px 8px 0;font-size:15px}
+
+/* charts */
+.chart{position:relative;width:100%;min-height:120px}
+.chart svg{display:block;max-width:100%;height:auto}
+.chart .hit{fill:transparent;cursor:crosshair}
+.chart .xh{opacity:0}
+.chart .col:hover .xh{opacity:.55}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink2);margin-top:8px}
+.legend i{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.legend i.ln{height:3px;vertical-align:3px}
+details.tv{margin-top:10px;font-size:14px}
+details.tv summary{cursor:pointer;color:var(--brand);font-weight:600}
+details.tv .tscroll{margin-top:8px}
+.tip{position:fixed;z-index:60;pointer-events:none;background:var(--tip-bg);color:var(--tip-ink);padding:8px 10px;border-radius:6px;font-size:13px;line-height:1.4;white-space:pre-line;max-width:260px;box-shadow:0 4px 14px rgba(0,0,0,.25);opacity:0;transition:opacity .08s}
+.tip.on{opacity:1}
+
+/* dashboard */
+.dash-top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr);gap:20px;align-items:stretch}
+@media (max-width:900px){.dash-top{grid-template-columns:minmax(0,1fr)}}
+.rings{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.ringbox{display:grid;justify-items:center;gap:2px;text-align:center}
+.ringbox .rl{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--mute)}
+.pillars{display:grid;gap:12px}
+.pillar{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr) auto;gap:12px;align-items:center}
+.pillar .pn{font-weight:700;line-height:1.15}
+.pillar .pn span{display:block;font-weight:400;font-size:12px;color:var(--mute)}
+.pillar .pv{min-width:36px;text-align:right;font-weight:700}
+@media (max-width:520px){.pillar{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n p" "m m"}.pillar .pn{grid-area:n}.pillar .meter{grid-area:m}.pillar .pv{grid-area:p}}
+.dgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.dgrid{grid-template-columns:minmax(0,1fr)}}
+.dgrid .wide{grid-column:1/-1}
+
+/* footer */
+.foot{background:var(--mast);color:var(--mast-ink);border-top:3px solid var(--mast-gold);margin-top:24px}
+.foot .wrap{padding-block:22px;display:grid;gap:8px}
+.foot .brand{font-family:var(--display);font-size:22px;color:var(--mast-gold);font-weight:700}
+.foot .fine{font-size:13px;color:#b9cfc2;max-width:90ch}
+
+/* modal + toast */
+.scrim{position:fixed;inset:0;background:rgba(5,15,10,.6);z-index:80;display:grid;place-items:center;padding:16px}
+.scrim[hidden]{display:none}
+.modal{background:var(--surface);color:var(--ink);border-radius:12px;max-width:620px;width:100%;max-height:90vh;overflow:auto;padding:20px;display:grid;gap:12px;border:1px solid var(--line)}
+.toast{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--tip-bg);color:var(--tip-ink);padding:10px 16px;border-radius:8px;z-index:90;opacity:0;pointer-events:none;transition:all .2s;max-width:min(92vw,520px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="basmala" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="mast-main">
+      <div>
+        <div class="kicker">Creed-to-Commerce™ · The Balanced Middle Path Academy</div>
+        <h1>Madinah Viability Compass</h1>
+        <p class="tagline">Measure your lease, your customer and your capital with real numbers before you commit. Every estimate here comes from your inputs, not from hope.</p>
+      </div>
+      <div class="acts">
+        <button class="btn primary" id="btnPdf" type="button">Create PDF report</button>
+        <button class="btn onmast" id="btnBackup" type="button">Save / restore</button>
+        <button class="btn onmast" id="btnTheme" type="button" aria-label="Switch colour theme">Theme: auto</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="banner" id="banner" hidden>
+  <div class="wrap">
+    <span><b>Example data is loaded.</b> The numbers belong to an imaginary café so you can see how the compass reads. Replace them with your own.</span>
+    <span class="acts"><button class="btn sm" id="btnClear" type="button">Clear sample data</button><button class="btn sm" id="btnKeep" type="button">Keep these numbers</button></span>
+  </div>
+</div>
+
+<nav class="rail" aria-label="Creed-to-Commerce stages">
+  <div class="wrap" id="rail" role="tablist"></div>
+</nav>
+
+<section class="live" aria-live="polite" aria-label="Live compass reading">
+  <div class="wrap" id="live"></div>
+</section>
+
+<main>
+  <div class="wrap" id="panels"></div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="brand">Creed-to-Commerce™</div>
+    <div>The Balanced Middle Path Academy, LLC</div>
+    <p class="fine">This tool gives educational estimates built from the numbers you enter. It is not financial, legal or investment advice and it cannot promise any result. Confirm rent, licensing and financing terms with the landlord, the relevant authorities and a qualified adviser before you sign.</p>
+  </div>
+</footer>
+
+<div class="tip" id="tip" role="status"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<div class="scrim" id="modalBackup" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mbTitle">
+    <h3 id="mbTitle">Save or restore your work</h3>
+    <p class="small muted">Your numbers save automatically in this browser. Use a backup file to move them to another device or to keep a copy.</p>
+    <div class="acts">
+      <button class="btn" id="mbDownload" type="button">Download backup file</button>
+      <button class="btn" id="mbCopy" type="button">Copy backup text</button>
+      <label class="btn" for="mbFile" style="cursor:pointer">Choose backup file</label>
+      <input type="file" id="mbFile" accept=".json,application/json" hidden>
+    </div>
+    <div class="field"><label for="mbText">Backup text</label>
+      <textarea class="ta" id="mbText" rows="6" spellcheck="false" placeholder="Paste backup text here, then press Restore."></textarea></div>
+    <div class="acts">
+      <button class="btn primary" id="mbRestore" type="button" style="background:var(--brand);border-color:var(--brand);color:var(--brand-ink)">Restore from text</button>
+      <button class="btn" id="mbSample" type="button">Load example data</button>
+      <button class="btn danger" id="mbReset" type="button">Erase everything</button>
+      <button class="btn" id="mbClose" type="button">Close</button>
+    </div>
+  </div>
+</div>
+<script>
+/* ============================================================
+   MODEL — Madinah Viability Compass
+   Pure functions: state in, numbers out. No DOM access here.
+   ============================================================ */
+const HORIZON = 24;
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+const SECTORS = {
+  fnb:         { label: 'Food & beverage',                    rentMax: 10 },
+  retail:      { label: 'Retail & trade',                     rentMax: 12 },
+  services:    { label: 'Services, clinics & offices',        rentMax: 15 },
+  hospitality: { label: 'Hospitality & guesthouses',          rentMax: 18 },
+  production:  { label: 'Farming, aquaculture & production',  rentMax: 8  },
+  online:      { label: 'Online & delivery',                  rentMax: 5  }
+};
+
+/* Illustrative seasonal shapes (Jan..Dec). Ramadan and Hajj move about 11 days earlier each
+   Gregorian year, so the owner must edit these for the opening year. */
+const SEASON_PRESETS = {
+  flat:     { label: 'Flat (no seasonality)',                      idx: [1,1,1,1,1,1,1,1,1,1,1,1] },
+  resident: { label: 'Resident-driven (mild peaks)',               idx: [1.05,1.1,1.1,0.95,0.95,0.9,0.85,0.85,0.95,1,1.1,1.1] },
+  pilgrim:  { label: 'Pilgrim-driven (Ramadan and Hajj peaks)',    idx: [1.0,1.5,1.4,0.9,1.3,1.1,0.7,0.7,0.7,0.9,1.0,1.1] }
+};
+
+const GATES = [
+  'My business activity is halal and I can obtain every licence it needs.',
+  'I can name the customer I serve and the hardship I relieve for them.',
+  'I have written down what I will not do for profit (my red lines).',
+  'I have a plan to pay staff, suppliers and the landlord on time (amanah).',
+  'My family or partner knows the exact amount I am putting at risk.'
+];
+
+const STAGES = [
+  { id: 'creed',    n: 'I',   name: 'Creed',       sub: 'Purpose and readiness' },
+  { id: 'customer', n: 'II',  name: 'Customer',    sub: 'Problem worth paying for' },
+  { id: 'place',    n: 'III', name: 'Place',       sub: 'Rent and lease' },
+  { id: 'capital',  n: 'IV',  name: 'Capital',     sub: 'What you need and how you use it' },
+  { id: 'calc',     n: 'V',   name: 'Calculation', sub: 'Unit economics and forecast' },
+  { id: 'commerce', n: 'VI',  name: 'Commerce',    sub: 'Verdict and dashboard' }
+];
+
+const WEIGHTS = { creed: 10, customer: 25, place: 20, capital: 25, calc: 20 };
+
+/* ---------- helpers ---------- */
+const num = v => { const n = parseFloat(v); return isFinite(n) ? n : 0; };
+const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+const sum = (arr, k) => (arr || []).reduce((s, r) => s + num(r[k]), 0);
+const safeDiv = (a, b, d = 0) => (b && isFinite(a / b)) ? a / b : d;
+const lerpScore = (x, bad, good) => clamp((x - bad) / (good - bad), 0, 1) * 100;   // linear 0..100
+const uid = () => Math.random().toString(36).slice(2, 9);
+
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function gauss(r) { let u = 0; while (!u) u = r(); const v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+function quantile(sorted, q) { if (!sorted.length) return 0; const i = clamp(q, 0, 1) * (sorted.length - 1); const lo = Math.floor(i), hi = Math.ceil(i); return sorted[lo] + (sorted[hi] - sorted[lo]) * (i - lo); }
+
+/* ---------- blank and sample states ---------- */
+function blankState() {
+  return {
+    v: 1, sample: false,
+    meta: { venture: '', owner: '', sector: 'fnb', district: '', openYear: new Date().getFullYear() + 1, openMonth: 1 },
+    creed: { statement: '', gates: [false, false, false, false, false] },
+    problem: { target: '', statement: '', interviews: 0, urgentPct: 0, willPayPct: 0, presales: 0, diff: 3 },
+    lease: { rent: 0, payEvery: 12, term: 3, esc: 5, depositMonths: 0, exit: 'none' },
+    startup: [
+      { name: 'Fit-out and renovation', type: 'fitout', amount: 0 },
+      { name: 'Equipment and furniture', type: 'equipment', amount: 0 },
+      { name: 'Licences, permits and legal', type: 'licence', amount: 0 },
+      { name: 'Opening inventory', type: 'inventory', amount: 0 },
+      { name: 'Branding and signage', type: 'other', amount: 0 }
+    ],
+    capital: { overrun: 15 },
+    sources: [ { name: 'My own savings', kind: 'equity', amount: 0, rate: 0, term: 0 } ],
+    owner: { draw: 0, start: 1 },
+    demand: { price: 0, varCost: 0, perDay: 0, days: 26, ramp: 6, haircut: true },
+    season: { preset: 'flat', idx: SEASON_PRESETS.flat.idx.slice(), strength: 0.7 },
+    fixed: [
+      { name: 'Staff wages and benefits', monthly: 0 },
+      { name: 'Utilities and internet', monthly: 0 },
+      { name: 'Marketing', monthly: 0 },
+      { name: 'Insurance and maintenance', monthly: 0 },
+      { name: 'Other fixed costs', monthly: 0 }
+    ],
+    unc: { auto: true, sigma: 0.35 },
+    checkins: []
+  };
+}
+
+function sampleState() {
+  return {
+    v: 1, sample: true,
+    meta: { venture: 'Sample: Neighborhood Café', owner: 'Example Founder', sector: 'fnb', district: 'Example district, Madinah', openYear: 2026, openMonth: 5 },
+    creed: { statement: 'To serve families and visitors honest, halal food in a clean, welcoming place, and to pay every staff member and supplier on time.', gates: [true, true, false, true, false] },
+    problem: { target: 'Residents and visitors within a 10-minute walk who lack a quiet, family-friendly place to eat and meet.', statement: 'Nearby options are crowded take-away counters with no family seating.', interviews: 26, urgentPct: 60, willPayPct: 55, presales: 6, diff: 3 },
+    lease: { rent: 10500, payEvery: 3, term: 3, esc: 5, depositMonths: 1, exit: 'none' },
+    startup: [
+      { name: 'Fit-out and renovation', type: 'fitout', amount: 85000 },
+      { name: 'Kitchen and coffee equipment', type: 'equipment', amount: 60000 },
+      { name: 'Licences, permits and legal', type: 'licence', amount: 8000 },
+      { name: 'Opening inventory', type: 'inventory', amount: 12000 },
+      { name: 'Branding and signage', type: 'other', amount: 10000 },
+      { name: 'Pre-opening staff and training', type: 'other', amount: 8000 }
+    ],
+    capital: { overrun: 15 },
+    sources: [
+      { name: 'My own savings', kind: 'equity', amount: 170000, rate: 0, term: 0 },
+      { name: 'Family partner', kind: 'equity', amount: 80000, rate: 0, term: 0 },
+      { name: 'Interest-free loan (qard)', kind: 'debt', amount: 80000, rate: 0, term: 36 }
+    ],
+    owner: { draw: 5000, start: 1 },
+    demand: { price: 28, varCost: 11, perDay: 150, days: 28, ramp: 6, haircut: true },
+    season: { preset: 'pilgrim', idx: SEASON_PRESETS.pilgrim.idx.slice(), strength: 0.7 },
+    fixed: [
+      { name: 'Staff wages and benefits', monthly: 17000 },
+      { name: 'Utilities and internet', monthly: 3000 },
+      { name: 'Marketing', monthly: 2500 },
+      { name: 'Licences and permits (monthly share)', monthly: 800 },
+      { name: 'Insurance and maintenance', monthly: 1200 },
+      { name: 'POS software and other', monthly: 1000 }
+    ],
+    unc: { auto: true, sigma: 0.35 },
+    checkins: [
+      { month: '2026-05', revenue: 33500, costs: 56500, cash: 65000 },
+      { month: '2026-06', revenue: 42000, costs: 60000, cash: 58000 },
+      { month: '2026-07', revenue: 43000, costs: 60000, cash: 20000 },
+      { month: '2026-08', revenue: 51500, costs: 63500, cash: 18500 }
+    ]
+  };
+}
+
+/* ---------- derived inputs ---------- */
+function evidenceScore(S) {
+  const p = S.problem;
+  return clamp(
+    clamp(num(p.interviews) / 30, 0, 1) * 15 +
+    clamp(num(p.urgentPct) / 100, 0, 1) * 20 +
+    clamp(num(p.willPayPct) / 100, 0, 1) * 15 +
+    clamp(num(p.presales) / 10, 0, 1) * 35 +
+    clamp(num(p.diff) / 5, 0, 1) * 15, 0, 100);
+}
+
+function derive(S) {
+  const D = {};
+  D.sector = SECTORS[S.meta.sector] || SECTORS.fnb;
+  D.startupListed = sum(S.startup, 'amount');
+  D.overrun = clamp(num(S.capital.overrun), 0, 200) / 100;
+  D.startup = D.startupListed * (1 + D.overrun);
+  D.rent = num(S.lease.rent);
+  D.P = Math.max(1, Math.round(num(S.lease.payEvery)) || 1);
+  D.depositMonths = num(S.lease.depositMonths);
+  D.deposit = D.rent * D.depositMonths;
+  D.rentAdvance = D.rent * D.P;
+  D.openingUses = D.startup + D.deposit + D.rentAdvance;
+  D.sources = sum(S.sources, 'amount');
+  D.cash0 = D.sources - D.openingUses;
+  // amortising debt service (rate 0 = interest-free)
+  D.debts = (S.sources || []).filter(s => s.kind === 'debt' && num(s.amount) > 0).map(s => {
+    const n = Math.max(1, Math.round(num(s.term)) || 36), r = num(s.rate) / 1200, a = num(s.amount);
+    const pmt = r > 0 ? a * r / (1 - Math.pow(1 + r, -n)) : a / n;
+    return { pmt, n };
+  });
+  D.price = num(S.demand.price);
+  D.varCost = num(S.demand.varCost);
+  D.cm = D.price - D.varCost;
+  D.cmPct = safeDiv(D.cm, D.price);
+  D.days = Math.max(1, num(S.demand.days) || 26);
+  D.perDay = num(S.demand.perDay);
+  D.units = D.perDay * D.days;
+  D.ramp = Math.max(1, num(S.demand.ramp) || 1);
+  D.evidence = evidenceScore(S);
+  D.haircut = S.demand.haircut ? 0.55 + 0.45 * D.evidence / 100 : 1;
+  D.fixedOther = sum(S.fixed, 'monthly');
+  D.owner = num(S.owner.draw);
+  D.ownerStart = Math.max(1, Math.round(num(S.owner.start)) || 1);
+  D.esc = num(S.lease.esc) / 100;
+  D.sigma = S.unc.auto ? 0.50 - 0.32 * D.evidence / 100 : clamp(num(S.unc.sigma), 0.05, 0.8);
+  const idx = (S.season.idx || []).map(num);
+  const mean = idx.reduce((a, b) => a + b, 0) / (idx.length || 1) || 1;
+  D.seasonNorm = idx.length === 12 ? idx.map(v => v / mean) : Array(12).fill(1);
+  D.strength = clamp(num(S.season.strength), 0, 1);
+  return D;
+}
+
+/* ---------- one 24-month cash path ----------
+   p: optional multipliers { level, rampMult, costMult, startMult, noise[], rentMult, priceMult,
+                             unitsMult, varMult, fixMult, ownMult } */
+function runPath(S, D, p = {}) {
+  const H = HORIZON;
+  const level = p.level ?? 1, rampMult = p.rampMult ?? 1, startMult = p.startMult ?? 1;
+  const priceM = p.priceMult ?? 1, unitsM = p.unitsMult ?? 1, rentM = p.rentMult ?? 1, ownM = p.ownMult ?? 1;
+  const varM = (p.varMult ?? 1) * (p.costMult ?? 1), fixM = (p.fixMult ?? 1) * (p.costMult ?? 1);
+  const rent0 = D.rent * rentM, P = D.P;
+  const rampN = Math.max(1, D.ramp * rampMult);
+  const R = { units: [0], rev: [0], varc: [0], fix: [0], rent: [0], own: [0], debt: [0], op: [0], pre: [0], cash: [] };
+  const openUses = D.startupListed * (1 + D.overrun) * startMult + rent0 * D.depositMonths + rent0 * P;
+  R.cash[0] = D.sources - openUses;
+  let cumPre = 0;
+  for (let t = 1; t <= H; t++) {
+    const rampT = rampN <= 1 ? 1 : Math.min(1, 0.3 + 0.7 * (t - 1) / (rampN - 1));
+    const idx = D.seasonNorm[((num(S.meta.openMonth) - 1) + (t - 1)) % 12 | 0];
+    const seasonT = 1 + D.strength * (idx - 1);
+    const noise = p.noise ? p.noise[t] : 1;
+    const units = D.units * D.haircut * level * unitsM * rampT * seasonT * noise;
+    const rev = units * D.price * priceM;
+    const varc = units * D.varCost * varM;
+    const fix = D.fixedOther * fixM;
+    const rentAcc = rent0 * Math.pow(1 + D.esc, Math.floor((t - 1) / 12));
+    const own = t >= D.ownerStart ? D.owner * ownM : 0;
+    let debt = 0; for (const d of D.debts) if (t <= d.n) debt += d.pmt;
+    let rentPay = 0;
+    if (t % P === 0 && t < H) rentPay = rent0 * Math.pow(1 + D.esc, Math.floor(t / 12)) * P;
+    const op = rev - varc - fix - rentAcc;
+    cumPre += op - debt;
+    R.units[t] = units; R.rev[t] = rev; R.varc[t] = varc; R.fix[t] = fix; R.rent[t] = rentAcc;
+    R.own[t] = own; R.debt[t] = debt; R.op[t] = op; R.pre[t] = cumPre;
+    R.cash[t] = R.cash[t - 1] + rev - varc - fix - own - debt - rentPay;
+  }
+  R.minCash = Math.min(...R.cash);
+  R.beMonth = breakEvenMonth(R.op, R.rev);
+  return R;
+}
+
+function breakEvenMonth(op, rev) {
+  for (let t = 1; t + 2 < op.length; t++) {
+    if (rev[t] > 0 && (op[t] + op[t + 1] + op[t + 2]) / 3 >= 0 && op[t + 2] >= 0) return t;
+  }
+  return null;
+}
+
+/* ---------- Monte Carlo ---------- */
+function monteCarlo(S, D, N = 500, opts = {}) {
+  const H = HORIZON, rentMult = opts.rentMult ?? 1;
+  let survive = 0, profit12 = 0, profit18 = 0;
+  const caps = [], mins = [], bes = [], byMonth = Array.from({ length: H + 1 }, () => []);
+  for (let i = 0; i < N; i++) {
+    const rng = mulberry32(7919 + i * 101);
+    const level = Math.exp(D.sigma * gauss(rng) - D.sigma * D.sigma / 2);
+    const noise = [1]; for (let t = 1; t <= H; t++) noise[t] = Math.exp(0.08 * gauss(rng) - 0.0032);
+    const R = runPath(S, D, {
+      level, rampMult: Math.exp(0.25 * gauss(rng)), costMult: Math.exp(0.08 * gauss(rng)),
+      startMult: Math.exp(0.10 * gauss(rng)), noise, rentMult
+    });
+    if (R.minCash >= 0) survive++;
+    if (R.beMonth !== null && R.beMonth <= 12) profit12++;
+    if (R.beMonth !== null && R.beMonth <= 18) profit18++;
+    if (R.beMonth !== null) bes.push(R.beMonth);
+    mins.push(R.minCash);
+    caps.push(D.sources - R.minCash);
+    for (let t = 0; t <= H; t++) byMonth[t].push(R.cash[t]);
+  }
+  caps.sort((a, b) => a - b); bes.sort((a, b) => a - b);
+  const pct = q => byMonth.map(a => quantile(a.slice().sort((x, y) => x - y), q));
+  return {
+    N, survival: survive / N, profit12: profit12 / N, profit18: profit18 / N,
+    beMedian: bes.length >= N / 2 ? quantile(bes, 0.5) : null,
+    cap50: quantile(caps, 0.5), cap90: quantile(caps, 0.9),
+    p10: pct(0.1), p50: pct(0.5), p90: pct(0.9)
+  };
+}
+
+function rentStress(S, D) {
+  const out = [];
+  for (let m = 0.5; m <= 1.51; m += 0.1) {
+    const mm = Math.round(m * 10) / 10;
+    const mc = monteCarlo(S, D, 200, { rentMult: mm });
+    out.push({ mult: mm, rent: D.rent * mm, survival: mc.survival, cap90: mc.cap90 });
+  }
+  return out;
+}
+
+function sensitivity(S, D, base) {
+  const rampLow = Math.max(1, D.ramp - 3), rampHigh = D.ramp + 3;
+  const items = [
+    { label: 'Selling price', lo: '−10%', hi: '+10%', a: { priceMult: 0.9 }, b: { priceMult: 1.1 } },
+    { label: 'Customer volume', lo: '−20%', hi: '+20%', a: { unitsMult: 0.8 }, b: { unitsMult: 1.2 } },
+    { label: 'Cost per sale', lo: '+10%', hi: '−10%', a: { varMult: 1.1 }, b: { varMult: 0.9 } },
+    { label: 'Rent', lo: '+20%', hi: '−20%', a: { rentMult: 1.2 }, b: { rentMult: 0.8 } },
+    { label: 'Other fixed costs', lo: '+20%', hi: '−20%', a: { fixMult: 1.2 }, b: { fixMult: 0.8 } },
+    { label: 'Ramp-up time', lo: '+3 mo', hi: '−3 mo', a: { rampMult: rampHigh / D.ramp }, b: { rampMult: rampLow / D.ramp } },
+    { label: 'Owner pay', lo: '+25%', hi: '−25%', a: { ownMult: 1.25 }, b: { ownMult: 0.75 } }
+  ];
+  return items.map(it => {
+    const lo = runPath(S, D, it.a).cash[HORIZON] - base.cash[HORIZON];
+    const hi = runPath(S, D, it.b).cash[HORIZON] - base.cash[HORIZON];
+    return { label: it.label, loLabel: it.lo, hiLabel: it.hi, lo, hi, span: Math.max(Math.abs(lo), Math.abs(hi)) };
+  }).sort((x, y) => y.span - x.span);
+}
+
+/* ---------- full analysis ---------- */
+function analyse(S) {
+  const D = derive(S);
+  const E = runPath(S, D);
+  const mc = monteCarlo(S, D, 500);
+  const A = { D, E, mc };
+
+  // mature year = months 13..24
+  const avg = (arr, a = 13, b = 24) => { let s = 0; for (let t = a; t <= b; t++) s += arr[t]; return s / (b - a + 1); };
+  A.revY2 = avg(E.rev); A.rentY2 = avg(E.rent); A.opY2 = avg(E.op); A.debtY2 = avg(E.debt); A.varY2 = avg(E.varc);
+  A.rentRatio = A.revY2 > 0 ? A.rentY2 / A.revY2 : null;
+  A.rentMax = D.sector.rentMax / 100;
+
+  // break-even (steady state, with owner pay and debt service)
+  const obligations = D.fixedOther + A.rentY2 + D.owner + A.debtY2;
+  A.obligations = obligations;
+  A.beUnits = D.cm > 0 ? obligations / D.cm : Infinity;
+  A.bePerDay = A.beUnits / D.days;
+  A.beRevenue = A.beUnits * D.price;
+  A.fcPerDay = D.perDay * D.haircut;
+  A.fcUnits = D.units * D.haircut;
+  A.mos = A.fcUnits > 0 && isFinite(A.beUnits) ? 1 - A.beUnits / A.fcUnits : -1;
+  A.beNoOwnerPerDay = D.cm > 0 ? (D.fixedOther + A.rentY2 + A.debtY2) / D.cm / D.days : Infinity;
+  // sales needed so that rent is within the sector target
+  A.salesForRent = A.rentMax > 0 ? A.rentY2 / A.rentMax : 0;
+  A.perDayForRent = D.price > 0 ? A.salesForRent / D.price / D.days : 0;
+  A.dscr = A.debtY2 > 0 ? A.opY2 / A.debtY2 : null;
+
+  // owner pay funded from capital
+  let ownFromCap = 0; for (let t = 1; t <= HORIZON; t++) if (E.pre[t] < 0) ownFromCap += E.own[t];
+  A.ownFromCap = ownFromCap;
+  A.ownShare = safeDiv(ownFromCap, D.sources);
+  A.sustainableOwner = Math.max(0, 0.5 * (A.opY2 - A.debtY2));
+
+  // exposure if you walk away at month 6
+  const leaseMonths = Math.max(0, num(S.lease.term) * 12);
+  const monthsOwed = S.lease.exit === 'clause' ? Math.min(3, Math.max(0, leaseMonths - 6)) : Math.max(0, leaseMonths - 6);
+  A.exposure = D.rent * monthsOwed;
+  A.exposureRatio = safeDiv(A.exposure, D.sources, A.exposure > 0 ? 9 : 0);
+
+  // runway
+  A.runwayMonth = (() => { for (let t = 0; t <= HORIZON; t++) if (E.cash[t] < 0) return t; return null; })();
+  const burn6 = (() => { let s = 0; for (let t = 1; t <= 6; t++) s += D.fixedOther + E.rent[t] + E.own[t] + E.debt[t]; return s / 6; })();
+  A.monthlyOutflow = burn6;
+  A.coverMonths = burn6 > 0 ? Math.max(0, D.cash0) / burn6 : 0;
+
+  // capital need
+  A.need50 = mc.cap50; A.need90 = mc.cap90;
+  A.cushion90 = Math.max(0, mc.cap90 - D.openingUses);
+  A.gap90 = Math.max(0, mc.cap90 - D.sources);
+  A.adequacy = D.sources > 0 ? clamp(D.sources / Math.max(1, mc.cap90), 0, 1) : 0;
+  const fitEq = (S.startup || []).filter(r => r.type === 'fitout' || r.type === 'equipment').reduce((s, r) => s + num(r.amount), 0);
+  A.fitShare = safeDiv(fitEq, D.startupListed);
+
+  // pillar scores
+  const P = {};
+  const gates = (S.creed.gates || []).filter(Boolean).length;
+  const stLen = (S.creed.statement || '').trim().length;
+  P.creed = gates / GATES.length * 75 + (stLen >= 30 ? 25 : stLen > 0 ? 10 : 0);
+  P.customer = D.evidence;
+  const rentScore = A.rentRatio === null ? (D.rent === 0 ? 50 : 0) : lerpScore(A.rentRatio, A.rentMax * 2.5, A.rentMax);
+  const expScore = lerpScore(A.exposureRatio, 1.5, 0.5);
+  P.place = D.rent === 0 && A.revY2 === 0 ? 0 : 0.7 * rentScore + 0.3 * expScore;
+  const ownScore = lerpScore(A.ownShare, 0.25, 0.05);
+  P.capital = D.sources === 0 ? 0 : 0.7 * A.adequacy * 100 + 0.3 * ownScore;
+  const cmScore = lerpScore(D.cmPct, 0.10, 0.50);
+  const beScore = E.beMonth === null ? 0 : lerpScore(E.beMonth, 24, 6);
+  const mosScore = lerpScore(A.mos, 0, 0.30);
+  P.calc = D.price === 0 ? 0 : 0.25 * cmScore + 0.35 * beScore + 0.40 * mosScore;
+  A.sub = { cmScore, beScore, mosScore, rentScore, expScore, ownScore };
+  A.pillars = P;
+  A.score = Object.keys(WEIGHTS).reduce((s, k) => s + P[k] * WEIGHTS[k] / 100, 0);
+  A.hasData = D.price > 0 && D.units > 0;
+  A.survival = A.hasData ? mc.survival * 100 : 0;
+  A.composite = A.hasData ? 0.5 * A.score + 0.5 * A.survival : A.score * 0.5;
+  A.verdict = verdictFor(A.composite);
+  A.stageStatus = {}; for (const k in P) A.stageStatus[k] = statusFor(P[k]);
+
+  A.rentStress = rentStress(S, D);
+  A.sens = sensitivity(S, D, E);
+  A.notes = coachNotes(S, A);
+  return A;
+}
+
+function verdictFor(c) {
+  if (c >= 75) return { key: 'good', label: 'Strong course', line: 'Proceed with discipline and keep measuring.' };
+  if (c >= 60) return { key: 'warn', label: 'Promising, tighten first', line: 'Fix the flagged items before you commit capital.' };
+  if (c >= 45) return { key: 'serious', label: 'Fragile, prove it first', line: 'Earn more evidence before you spend or sign.' };
+  return { key: 'critical', label: 'Off course', line: 'Do not sign the lease yet. Rework the plan.' };
+}
+function statusFor(v) {
+  if (v >= 70) return { key: 'good', label: 'Clear' };
+  if (v >= 45) return { key: 'warn', label: 'Watch' };
+  return { key: 'critical', label: 'Stop' };
+}
+
+/* ---------- coach notes ---------- */
+const SAR = n => 'SAR ' + Math.round(n).toLocaleString('en-US');
+const PCT = (n, d = 0) => (n * 100).toFixed(d) + '%';
+
+function coachNotes(S, A) {
+  const D = A.D, notes = [];
+  const add = (stage, level, text) => notes.push({ stage, level, text });
+
+  // Creed
+  const missing = GATES.map((g, i) => S.creed.gates[i] ? null : i + 1).filter(Boolean);
+  if (missing.length) add('Creed', missing.length >= 3 ? 'critical' : 'warn', `${missing.length} creed gate${missing.length > 1 ? 's are' : ' is'} still open (gate${missing.length > 1 ? 's' : ''} ${missing.join(', ')}). Close them before you commit family money or sign anything.`);
+  else add('Creed', 'good', 'All five creed gates are checked. Your purpose, red lines and family accountability are in place.');
+  if ((S.creed.statement || '').trim().length < 30) add('Creed', 'warn', 'Write your creed statement in a sentence or two. It is the standard you will use when a profitable shortcut tempts you.');
+
+  // Customer
+  const p = S.problem;
+  if (num(p.presales) === 0) add('Customer', 'critical', 'You have no paid pre-sales. Opinions are cheap and payments are evidence. Collect at least 10 paid pre-orders, deposits or signed commitments before you sign a lease.');
+  else if (num(p.presales) < 10) add('Customer', 'warn', `You have ${num(p.presales)} paid pre-sale${num(p.presales) > 1 ? 's' : ''}. Aim for 10 or more; each one is worth more than ten friendly interviews.`);
+  else add('Customer', 'good', `${num(p.presales)} paid pre-sales is real evidence that customers will pay for what you offer.`);
+  if (num(p.interviews) < 20) add('Customer', 'warn', `Only ${num(p.interviews)} customer interviews. Talk to at least 30 people who match your target customer, not friends.`);
+  if (num(p.willPayPct) >= 70 && num(p.presales) < 5) add('Customer', 'warn', 'Many people say they would pay, but few have paid. Say-yes-do-no is the most common false signal in start-ups.');
+  if (S.demand.haircut && D.haircut < 0.99) add('Customer', D.haircut < 0.8 ? 'warn' : 'good', `Because evidence scores ${Math.round(D.evidence)}/100, this app cuts your projected customer volume by ${PCT(1 - D.haircut)} and widens the range of outcomes. More proof lifts that forecast back up.`);
+
+  // Place
+  if (D.rent > 0) {
+    if (A.rentRatio !== null && A.rentRatio > A.rentMax) {
+      add('Place', A.rentRatio > A.rentMax * 1.5 ? 'critical' : 'warn',
+        `Rent takes ${PCT(A.rentRatio, 1)} of your expected revenue in year two; the usual ceiling for ${D.sector.label.toLowerCase()} is ${PCT(A.rentMax)}. To carry this rent you need about ${SAR(A.salesForRent)} in monthly sales, roughly ${Math.round(A.perDayForRent)} customers a day, against ${Math.round(A.fcPerDay)} a day in your evidence-adjusted forecast.`);
+    } else if (A.rentRatio !== null) {
+      add('Place', 'good', `Rent is ${PCT(A.rentRatio, 1)} of expected year-two revenue, inside the ${PCT(A.rentMax)} ceiling for your sector.`);
+    }
+    if (D.P >= 6) add('Place', 'warn', `You pay ${SAR(D.rentAdvance)} up front at signing (${D.P} months of rent). That is ${PCT(safeDiv(D.rentAdvance, D.sources))} of your capital before you serve one customer. Ask for quarterly or monthly instalments.`);
+    if (S.lease.exit !== 'clause' && num(S.lease.term) >= 2) add('Place', 'warn', `With no exit clause, walking away at month 6 still leaves about ${SAR(A.exposure)} of rent owed (${PCT(safeDiv(A.exposure, D.sources))} of your capital). Negotiate a break clause or a shorter first term.`);
+  } else {
+    add('Place', 'warn', 'No rent entered yet. Enter the quoted rent, even if you are still negotiating, so the app can test it.');
+  }
+
+  // Capital
+  if (D.sources === 0) add('Capital', 'critical', 'No funding sources are entered. List every riyal you can actually access, including your own.');
+  else {
+    if (A.gap90 > 0) add('Capital', 'critical', `You have lined up ${SAR(D.sources)}. For a 90% chance of never running out of cash in 24 months this model suggests ${SAR(A.need90)}. The gap is ${SAR(A.gap90)}. Raise it, cut opening costs, or phase the launch.`);
+    else add('Capital', 'good', `Your ${SAR(D.sources)} covers the ${SAR(A.need90)} suggested for 90% confidence.`);
+    if (D.cash0 < 0) add('Capital', 'critical', `Your opening costs (${SAR(D.openingUses)}) exceed the money you have raised. You would be short ${SAR(-D.cash0)} on day one.`);
+  }
+  if (A.fitShare > 0.6 && D.startupListed > 0) add('Capital', 'warn', `Fit-out and equipment take ${PCT(A.fitShare)} of your start-up spending. Money sunk into walls and machines is money that cannot pay the rent during ramp-up. Consider used equipment or a lighter fit-out.`);
+  if (D.owner > 0 && A.ownShare > 0.10) add('Capital', 'critical', `About ${SAR(A.ownFromCap)} (${PCT(A.ownShare)} of your capital) goes to your own pay before the business has earned it. A fair draw once profitable is near ${SAR(A.sustainableOwner)} a month. Start at zero or a bare minimum until you pass break-even.`);
+  else if (D.owner > 0 && A.ownShare > 0.05) add('Capital', 'warn', `Your pay takes ${PCT(A.ownShare)} of capital during the loss-making months. Consider a lower draw until break-even.`);
+  else if (D.owner === 0) add('Capital', 'warn', 'You plan to draw nothing. That is admirable for a season, but plan for living costs so you do not pull cash out of the till later without recording it.');
+  if (D.owner > 0 && A.sustainableOwner > 0 && D.owner > A.sustainableOwner * 1.5) add('Capital', 'warn', `Your draw of ${SAR(D.owner)} is more than 1.5 times the ${SAR(A.sustainableOwner)} the business can sustain from year-two profit after debt.`);
+  if (A.dscr !== null && A.dscr < 1.25) add('Capital', A.dscr < 1 ? 'critical' : 'warn', `Debt cover is ${A.dscr.toFixed(2)}. Lenders and prudent owners want 1.25 or more: year-two operating profit should be at least 1.25 times loan repayments.`);
+
+  // Calculation
+  if (D.price > 0) {
+    if (D.cmPct < 0.30) add('Calculation', D.cmPct < 0.15 ? 'critical' : 'warn', `Each sale leaves only ${PCT(D.cmPct)} after direct costs. Thin margins amplify every mistake. Raise price, cut direct cost, or change the mix.`);
+    if (!isFinite(A.beUnits)) add('Calculation', 'critical', 'Direct cost per sale is at or above the selling price, so there is no break-even.');
+    else {
+      add('Calculation', A.mos < 0 ? 'critical' : A.mos < 0.15 ? 'warn' : 'good',
+        `Break-even is about ${Math.round(A.bePerDay)} customers a day (including your pay, rent and loan). Your evidence-adjusted forecast is ${Math.round(A.fcPerDay)} a day, a margin of safety of ${PCT(A.mos)}.`);
+      if (A.beNoOwnerPerDay < A.bePerDay) add('Calculation', 'good', `Without owner pay, break-even is ${Math.round(A.beNoOwnerPerDay)} customers a day. Your draw adds ${Math.round(A.bePerDay - A.beNoOwnerPerDay)} customers a day to the target.`);
+    }
+    if (A.E.beMonth === null) add('Calculation', 'critical', 'On the expected path the business does not reach steady monthly profit within 24 months.');
+    else if (A.E.beMonth > 12) add('Calculation', 'warn', `Expected break-even arrives in month ${A.E.beMonth}. Make sure your capital covers that long.`);
+  }
+  const sMax = Math.max(...D.seasonNorm), sMin = Math.min(...D.seasonNorm);
+  if (sMax / sMin > 1.8 && D.strength > 0.3) add('Calculation', 'warn', `Your seasonal pattern swings ${(sMax / sMin).toFixed(1)} times between best and worst month. Hold cash from peak months to cover slow months; do not treat peak-month sales as normal.`);
+
+  return notes;
+}
+
+/* ---------- check-ins ---------- */
+function monthIndex(S, ym) {
+  const m = /^(\d{4})-(\d{2})$/.exec(ym || ''); if (!m) return null;
+  return (parseInt(m[1], 10) - num(S.meta.openYear)) * 12 + (parseInt(m[2], 10) - num(S.meta.openMonth)) + 1;
+}
+function checkinAnalysis(S, A) {
+  const rows = (S.checkins || []).map(c => {
+    const t = monthIndex(S, c.month);
+    const planRev = t && t >= 1 && t <= HORIZON ? A.E.rev[t] : null;
+    const planCash = t && t >= 1 && t <= HORIZON ? A.E.cash[t] : null;
+    const planCost = t && t >= 1 && t <= HORIZON ? A.E.varc[t] + A.E.fix[t] + A.E.rent[t] + A.E.own[t] + A.E.debt[t] : null;
+    return { ...c, t, planRev, planCash, planCost, revRatio: planRev ? num(c.revenue) / planRev : null };
+  }).filter(r => r.t !== null).sort((a, b) => a.t - b.t);
+  if (!rows.length) return { rows, status: null };
+  const last3 = rows.slice(-3);
+  const ratios = last3.map(r => r.revRatio).filter(v => v !== null);
+  const avgRatio = ratios.length ? ratios.reduce((a, b) => a + b, 0) / ratios.length : null;
+  const trend = ratios.length >= 2 ? ratios[ratios.length - 1] - ratios[0] : 0;
+  const last = rows[rows.length - 1];
+  const burns = rows.slice(-3).map(r => num(r.costs) - num(r.revenue));
+  const burn = burns.length ? burns.reduce((a, b) => a + b, 0) / burns.length : 0;
+  const runway = burn > 0 ? num(last.cash) / burn : null;
+  const cashRatio = last.planCash > 0 ? num(last.cash) / last.planCash : null;
+  let key = 'good', label = 'On course';
+  if ((avgRatio !== null && avgRatio < 0.8) || (cashRatio !== null && cashRatio < 0.5) || num(last.cash) < 0) { key = 'critical'; label = 'Off course'; }
+  else if ((avgRatio !== null && avgRatio < 0.95) || (cashRatio !== null && cashRatio < 0.85)) { key = 'warn'; label = 'Drifting'; }
+  return { rows, status: { key, label }, avgRatio, trend, runway, burn, cashRatio, last };
+}
+/* ============================================================
+   CHARTS — hand-built SVG, themed through CSS variables.
+   In PDF mode the same functions emit literal light-theme colours.
+   ============================================================ */
+let PDFMODE = false;
+const PDFPAL = {
+  ink: '#10261c', ink2: '#44574d', mute: '#5f7167', grid: '#dfe7e1', surface: '#ffffff', line: '#c9d5cc',
+  s1: '#1e7a55', s2: '#c48a12', s3: '#2f6db5', s4: '#a9487a',
+  good: '#1e7a55', warn: '#b9770e', serious: '#c2570c', critical: '#b3261e', band: '#cfe6da', soft: '#eef3ee'
+};
+const C = n => PDFMODE ? PDFPAL[n] : `var(--${n})`;
+const FONT = () => PDFMODE ? 'Helvetica, Arial, sans-serif' : 'var(--body)';
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+const fmtK = v => {
+  const a = Math.abs(v), s = v < 0 ? '−' : '';
+  if (a >= 1e6) return s + (a / 1e6).toFixed(a >= 1e7 ? 0 : 1).replace(/\.0$/, '') + 'M';
+  if (a >= 1e3) return s + (a / 1e3).toFixed(a >= 1e5 || a % 1000 === 0 ? 0 : 1).replace(/\.0$/, '') + 'k';
+  return s + Math.round(a);
+};
+const money = n => (n < 0 ? '−' : '') + 'SAR ' + Math.round(Math.abs(n)).toLocaleString('en-US');
+
+function niceTicks(min, max, n = 5) {
+  if (!isFinite(min) || !isFinite(max)) { min = 0; max = 1; }
+  if (min === max) max = min + 1;
+  const span = max - min, raw = span / n, mag = Math.pow(10, Math.floor(Math.log10(raw))), err = raw / mag;
+  const step = (err >= 7.5 ? 10 : err >= 3.5 ? 5 : err >= 1.5 ? 2 : 1) * mag;
+  const lo = Math.floor(min / step) * step, hi = Math.ceil(max / step) * step, t = [];
+  for (let v = lo; v <= hi + step / 2; v += step) t.push(Math.round(v / step) * step);
+  return { lo, hi, ticks: t };
+}
+
+const svgOpen = (w, h, label) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="${esc(label)}" style="font-family:${FONT()};font-size:11px">`;
+const T = (x, y, txt, o = {}) => `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" style="fill:${C(o.c || 'mute')};text-anchor:${o.a || 'middle'};font-size:${o.s || 11}px;font-weight:${o.w || 400}">${esc(txt)}</text>`;
+const Ln = (x1, y1, x2, y2, c = 'grid', w = 1, dash) => `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" style="stroke:${C(c)};stroke-width:${w}${dash ? ';stroke-dasharray:' + dash : ''}"/>`;
+const emptyChart = (w, h, msg) => `${svgOpen(w, h, msg)}${T(w / 2, h / 2, msg, { c: 'mute', s: 13 })}</svg>`;
+
+function gridY(m, w, h, ticks, yf, fmt) {
+  let o = '';
+  for (const v of ticks) { const y = yf(v); o += Ln(m.l, y, w - m.r, y, v === 0 ? 'line' : 'grid', v === 0 ? 1.5 : 1) + T(m.l - 6, y + 3.5, fmt(v), { a: 'end' }); }
+  return o;
+}
+function openingMonthLabel(S, t) {
+  const mo = (num(S.meta.openMonth) - 1 + t - 1);
+  const y = num(S.meta.openYear) + Math.floor(mo / 12);
+  return MONTH_NAMES[((mo % 12) + 12) % 12] + ' ' + y;
+}
+
+/* ---------- 1. cash fan chart ---------- */
+function chFan(S, A, w, h) {
+  const mc = A.mc, H = HORIZON;
+  if (!A.hasData) return emptyChart(w, h, 'Enter price, cost and customers to see your cash path');
+  const m = { l: 54, r: 74, t: 14, b: 30 };
+  const all = mc.p10.concat(mc.p90, [0]);
+  const sc = niceTicks(Math.min(...all), Math.max(...all), 5);
+  const x = t => m.l + t / H * (w - m.l - m.r), y = v => m.t + (sc.hi - v) / (sc.hi - sc.lo) * (h - m.t - m.b);
+  let o = svgOpen(w, h, 'Cash balance over 24 months: worst 10 percent, median and best 10 percent');
+  o += gridY(m, w, h, sc.ticks, y, fmtK);
+  for (let t = 0; t <= H; t += 6) o += T(x(t), h - 10, t === 0 ? 'Open' : 'Month ' + t);
+  // band
+  let up = '', dn = '';
+  for (let t = 0; t <= H; t++) { up += `${t ? 'L' : 'M'}${x(t).toFixed(1)},${y(mc.p90[t]).toFixed(1)}`; }
+  for (let t = H; t >= 0; t--) { dn += `L${x(t).toFixed(1)},${y(mc.p10[t]).toFixed(1)}`; }
+  o += `<path d="${up}${dn}Z" style="fill:${C('s1')};fill-opacity:0.16;stroke:none"/>`;
+  const line = (arr, c, wd, dash) => `<path d="${arr.map((v, t) => `${t ? 'L' : 'M'}${x(t).toFixed(1)},${y(v).toFixed(1)}`).join('')}" style="fill:none;stroke:${C(c)};stroke-width:${wd};stroke-linejoin:round${dash ? ';stroke-dasharray:' + dash : ''}"/>`;
+  o += line(mc.p10, 's1', 1.2, '3 3') + line(mc.p90, 's1', 1.2, '3 3') + line(mc.p50, 's1', 2.5);
+  o += T(w - m.r + 6, y(mc.p90[H]) + 4, 'Best 10%', { a: 'start', c: 'ink2' });
+  o += T(w - m.r + 6, y(mc.p50[H]) + 4, 'Median', { a: 'start', c: 'ink', w: 600 });
+  o += T(w - m.r + 6, y(mc.p10[H]) + 4, 'Worst 10%', { a: 'start', c: 'ink2' });
+  o += T(m.l + 4, y(0) - 6, 'Cash = 0', { a: 'start', c: 'critical', w: 600 });
+  // hover columns
+  if (!PDFMODE) {
+    const cw = (w - m.l - m.r) / H;
+    for (let t = 0; t <= H; t++) {
+      const tip = `${t === 0 ? 'Opening day' : 'Month ' + t + ' (' + openingMonthLabel(S, t) + ')'}\nBest 10%: ${money(mc.p90[t])}\nMedian: ${money(mc.p50[t])}\nWorst 10%: ${money(mc.p10[t])}`;
+      o += `<g class="col" data-tip="${esc(tip)}"><line class="xh" x1="${x(t).toFixed(1)}" x2="${x(t).toFixed(1)}" y1="${m.t}" y2="${h - m.b}" style="stroke:${C('ink2')};stroke-width:1"/><rect class="hit" x="${(x(t) - cw / 2).toFixed(1)}" y="${m.t}" width="${cw.toFixed(1)}" height="${h - m.t - m.b}"/></g>`;
+    }
+  }
+  return o + '</svg>';
+}
+function tblFan(S, A) {
+  const mc = A.mc; let r = '';
+  for (let t = 0; t <= HORIZON; t += 2) r += `<tr><td>${t === 0 ? 'Open' : 'Month ' + t}</td><td>${money(mc.p10[t])}</td><td>${money(mc.p50[t])}</td><td>${money(mc.p90[t])}</td></tr>`;
+  return `<table class="tbl mini"><thead><tr><th>When</th><th>Worst 10%</th><th>Median</th><th>Best 10%</th></tr></thead><tbody>${r}</tbody></table>`;
+}
+
+/* ---------- 2. break-even chart ---------- */
+function chBreakeven(S, A, w, h) {
+  const D = A.D;
+  if (!A.hasData || !(D.cm > 0)) return emptyChart(w, h, 'Enter price, direct cost and customers per day');
+  const m = { l: 54, r: 16, t: 16, b: 38 };
+  const be = isFinite(A.bePerDay) ? A.bePerDay : 0;
+  const xMax = Math.max(be, D.perDay, A.fcPerDay, 10) * 1.45;
+  const rev = u => u * D.days * D.price, cost = u => A.obligations + u * D.days * D.varCost;
+  const yMaxRaw = Math.max(rev(xMax), cost(xMax));
+  const sc = niceTicks(0, yMaxRaw, 5);
+  const x = u => m.l + u / xMax * (w - m.l - m.r), y = v => m.t + (sc.hi - v) / (sc.hi - sc.lo) * (h - m.t - m.b);
+  let o = svgOpen(w, h, 'Break-even: monthly revenue and total cost against customers per day');
+  o += gridY(m, w, h, sc.ticks, y, fmtK);
+  const xt = niceTicks(0, xMax, 6);
+  for (const v of xt.ticks) if (v <= xMax) o += T(x(v), h - 20, String(Math.round(v)));
+  o += T((m.l + w - m.r) / 2, h - 5, 'Customers per day', { c: 'ink2' });
+  // loss / profit regions
+  if (be > 0 && be < xMax) {
+    o += `<polygon points="${x(0)},${y(rev(0))} ${x(be)},${y(rev(be))} ${x(0)},${y(cost(0))}" style="fill:${C('critical')};fill-opacity:0.12"/>`;
+    o += `<polygon points="${x(be)},${y(rev(be))} ${x(xMax)},${y(rev(xMax))} ${x(xMax)},${y(cost(xMax))}" style="fill:${C('good')};fill-opacity:0.14"/>`;
+  }
+  o += Ln(x(0), y(rev(0)), x(xMax), y(rev(xMax)), 's1', 2.5) + Ln(x(0), y(cost(0)), x(xMax), y(cost(xMax)), 's2', 2.5);
+  o += T(x(xMax) - 4, y(rev(xMax)) - 6, 'Revenue', { a: 'end', c: 'ink', w: 600 });
+  o += T(x(xMax) - 4, y(cost(xMax)) + 14, 'Total cost', { a: 'end', c: 'ink', w: 600 });
+  // forecast markers
+  const vline = (u, label, dash, row) => {
+    if (u <= 0 || u > xMax) return '';
+    const yy = h - m.b - 8 - row * 14;
+    return Ln(x(u), m.t, x(u), h - m.b, 'ink2', 1.2, dash) + T(x(u) + 5, yy, label, { a: 'start', c: 'ink2' });
+  };
+  o += vline(D.perDay, 'Your forecast ' + Math.round(D.perDay), '2 3', 0);
+  if (Math.abs(A.fcPerDay - D.perDay) > 0.5) o += vline(A.fcPerDay, 'Evidence-adjusted ' + Math.round(A.fcPerDay), '5 3', 1);
+  if (be > 0) {
+    o += `<circle cx="${x(be).toFixed(1)}" cy="${y(rev(be)).toFixed(1)}" r="5.5" style="fill:${C('surface')};stroke:${C('ink')};stroke-width:2"/>`;
+    o += T(x(be) - 10, y(rev(be)) - 12, 'Break-even ' + Math.round(be) + '/day', { a: 'end', c: 'ink', w: 700 });
+  }
+  if (!PDFMODE) {
+    const N = 40, cw = (w - m.l - m.r) / N;
+    for (let i = 0; i <= N; i++) {
+      const u = xMax * i / N, tip = `${u.toFixed(0)} customers a day\nRevenue: ${money(rev(u))}\nTotal cost: ${money(cost(u))}\nResult: ${money(rev(u) - cost(u))}`;
+      o += `<g class="col" data-tip="${esc(tip)}"><line class="xh" x1="${x(u).toFixed(1)}" x2="${x(u).toFixed(1)}" y1="${m.t}" y2="${h - m.b}" style="stroke:${C('ink2')};stroke-width:1"/><rect class="hit" x="${(x(u) - cw / 2).toFixed(1)}" y="${m.t}" width="${cw.toFixed(1)}" height="${h - m.t - m.b}"/></g>`;
+    }
+  }
+  return o + '</svg>';
+}
+
+/* ---------- 3. monthly result bars ---------- */
+function chMonthly(S, A, w, h) {
+  const E = A.E, H = HORIZON;
+  if (!A.hasData) return emptyChart(w, h, 'Enter price, cost and customers to see monthly results');
+  const res = []; for (let t = 1; t <= H; t++) res[t] = E.op[t] - E.own[t] - E.debt[t];
+  const m = { l: 54, r: 12, t: 14, b: 30 };
+  const vals = res.slice(1);
+  const sc = niceTicks(Math.min(0, ...vals), Math.max(0, ...vals), 5);
+  const y = v => m.t + (sc.hi - v) / (sc.hi - sc.lo) * (h - m.t - m.b);
+  const bw = (w - m.l - m.r) / H;
+  let o = svgOpen(w, h, 'Expected monthly result after rent, loan repayments and owner pay');
+  o += gridY(m, w, h, sc.ticks, y, fmtK);
+  for (let t = 1; t <= H; t++) {
+    const cx = m.l + (t - 0.5) * bw, v = res[t], y0 = y(0), y1 = y(v);
+    const top = Math.min(y0, y1), ht = Math.max(1, Math.abs(y1 - y0));
+    o += `<rect x="${(cx - bw * 0.36).toFixed(1)}" y="${top.toFixed(1)}" width="${(bw * 0.72).toFixed(1)}" height="${ht.toFixed(1)}" rx="2" style="fill:${C(v >= 0 ? 'good' : 'critical')}"/>`;
+    if (t === 1 || t % 3 === 0) o += T(cx, h - 10, String(t));
+    if (!PDFMODE) {
+      const tip = `Month ${t} (${openingMonthLabel(S, t)})\nRevenue: ${money(E.rev[t])}\nResult: ${money(v)}\nCash at month end: ${money(E.cash[t])}`;
+      o += `<g class="col" data-tip="${esc(tip)}"><rect class="hit" x="${(cx - bw / 2).toFixed(1)}" y="${m.t}" width="${bw.toFixed(1)}" height="${h - m.t - m.b}"/></g>`;
+    }
+  }
+  return o + '</svg>';
+}
+
+/* ---------- 4. capital: needed vs raised ---------- */
+function chCapital(S, A, w, h) {
+  const D = A.D;
+  if (D.sources === 0 && !A.hasData) return emptyChart(w, h, 'Enter your funding sources and costs');
+  const need = Math.max(A.need90, D.openingUses), raised = D.sources;
+  const eq = (S.sources || []).filter(s => s.kind !== 'debt').reduce((s, r) => s + num(r.amount), 0);
+  const debt = (S.sources || []).filter(s => s.kind === 'debt').reduce((s, r) => s + num(r.amount), 0);
+  const m = { l: 120, r: 16, t: 14, b: 46 };
+  const sc = niceTicks(0, Math.max(need, raised) * 1.05, 5);
+  const x = v => m.l + v / sc.hi * (w - m.l - m.r);
+  const rowH = 38, y1 = m.t + 6, y2 = y1 + rowH + 22;
+  let o = svgOpen(w, h, 'Capital needed for 90 percent confidence compared with capital raised');
+  for (const v of sc.ticks) { o += Ln(x(v), m.t, x(v), h - m.b, 'grid') + T(x(v), h - m.b + 16, fmtK(v)); }
+  o += T((m.l + w - m.r) / 2, h - 6, 'SAR', { c: 'ink2' });
+  const seg = (v0, v1, c, y, label, tip) => {
+    const wd = Math.max(0, x(v1) - x(v0) - 2);
+    let s = `<g${PDFMODE ? '' : ` class="col" data-tip="${esc(tip)}"`}><rect x="${x(v0).toFixed(1)}" y="${y}" width="${wd.toFixed(1)}" height="${rowH}" rx="3" style="fill:${C(c)}"/>`;
+    if (wd > label.length * 6.6 + 14) s += T(x(v0) + wd / 2, y + rowH / 2 + 4, label, { c: 'surface', w: 700 });
+    return s + '</g>';
+  };
+  const lab = (y, a, b) => T(m.l - 10, y + rowH / 2 - 2, a, { a: 'end', c: 'ink', w: 600 }) + T(m.l - 10, y + rowH / 2 + 12, b, { a: 'end', c: 'mute' });
+  o += lab(y1, 'Needed', '90% confidence');
+  o += seg(0, D.openingUses, 's2', y1, 'Opening costs ' + fmtK(D.openingUses), `Opening costs: ${money(D.openingUses)}\nStart-up spending with overrun, lease deposit and rent paid in advance`);
+  o += seg(D.openingUses, need, 's4', y1, 'Ramp-up cushion ' + fmtK(need - D.openingUses), `Ramp-up cushion: ${money(need - D.openingUses)}\nCash needed to cover early losses and slow months in 9 of 10 simulated futures`);
+  o += lab(y2, 'Raised', 'your sources');
+  if (eq > 0) o += seg(0, eq, 's1', y2, 'Equity ' + fmtK(eq), `Equity and grants: ${money(eq)}`);
+  if (debt > 0) o += seg(eq, eq + debt, 's3', y2, 'Loans ' + fmtK(debt), `Loans: ${money(debt)}`);
+  if (need > raised + 1) {
+    o += `<rect x="${x(raised).toFixed(1)}" y="${y2}" width="${Math.max(0, x(need) - x(raised) - 1).toFixed(1)}" height="${rowH}" rx="3" style="fill:none;stroke:${C('critical')};stroke-width:1.5;stroke-dasharray:5 3"/>`;
+    o += T((x(raised) + x(need)) / 2, y2 + rowH / 2 + 4, 'Gap ' + fmtK(need - raised), { c: 'critical', w: 700 });
+  }
+  return o + '</svg>';
+}
+
+/* ---------- 5. rent stress ---------- */
+function chRent(S, A, w, h) {
+  const D = A.D;
+  if (!A.hasData || D.rent <= 0) return emptyChart(w, h, 'Enter the rent and your sales forecast to stress-test the lease');
+  const m = { l: 46, r: 16, t: 14, b: 44 };
+  const pts = A.rentStress, xMin = pts[0].mult, xMax = pts[pts.length - 1].mult;
+  const x = v => m.l + (v - xMin) / (xMax - xMin) * (w - m.l - m.r), y = v => m.t + (1 - v) * (h - m.t - m.b);
+  let o = svgOpen(w, h, 'Chance of surviving 24 months at different rent levels');
+  for (const v of [0, 0.25, 0.5, 0.75, 1]) o += Ln(m.l, y(v), w - m.r, y(v), v === 0 ? 'line' : 'grid') + T(m.l - 6, y(v) + 3.5, Math.round(v * 100) + '%', { a: 'end' });
+  o += Ln(m.l, y(0.8), w - m.r, y(0.8), 'good', 1.2, '5 3') + T(w - m.r - 2, y(0.8) - 5, '80% target', { a: 'end', c: 'good', w: 600 });
+  pts.forEach((p, i) => { if (i % 2 === 0) o += T(x(p.mult), h - 24, fmtK(p.rent)) + T(x(p.mult), h - 11, Math.round(p.mult * 100) + '%', { c: 'mute', s: 10 }); });
+  o += `<path d="${pts.map((p, i) => `${i ? 'L' : 'M'}${x(p.mult).toFixed(1)},${y(p.survival).toFixed(1)}`).join('')}" style="fill:none;stroke:${C('s1')};stroke-width:2.5;stroke-linejoin:round"/>`;
+  const cw = (w - m.l - m.r) / (pts.length - 1);
+  for (const p of pts) {
+    const cur = Math.abs(p.mult - 1) < 0.01;
+    o += `<circle cx="${x(p.mult).toFixed(1)}" cy="${y(p.survival).toFixed(1)}" r="${cur ? 6 : 3.5}" style="fill:${cur ? C('s2') : C('s1')};stroke:${C('surface')};stroke-width:2"/>`;
+    if (cur) o += T(x(p.mult), y(p.survival) - 12, 'Your rent ' + Math.round(p.survival * 100) + '%', { c: 'ink', w: 700 });
+    if (!PDFMODE) {
+      const tip = `Rent ${money(p.rent)} a month (${Math.round(p.mult * 100)}% of yours)\nSurvival odds: ${Math.round(p.survival * 100)}%\nCapital for 90% confidence: ${money(p.cap90)}`;
+      o += `<g class="col" data-tip="${esc(tip)}"><line class="xh" x1="${x(p.mult).toFixed(1)}" x2="${x(p.mult).toFixed(1)}" y1="${m.t}" y2="${h - m.b}" style="stroke:${C('ink2')};stroke-width:1"/><rect class="hit" x="${(x(p.mult) - cw / 2).toFixed(1)}" y="${m.t}" width="${cw.toFixed(1)}" height="${h - m.t - m.b}"/></g>`;
+    }
+  }
+  o += T((m.l + w - m.r) / 2, h - 0, '', {});
+  return o + '</svg>';
+}
+function tblRent(A) {
+  const r = A.rentStress.map(p => `<tr><td>${money(p.rent)}</td><td>${Math.round(p.mult * 100)}%</td><td>${Math.round(p.survival * 100)}%</td><td>${money(p.cap90)}</td></tr>`).join('');
+  return `<table class="tbl mini"><thead><tr><th>Monthly rent</th><th>vs yours</th><th>Survival odds</th><th>Capital for 90%</th></tr></thead><tbody>${r}</tbody></table>`;
+}
+
+/* ---------- 6. tornado ---------- */
+function chTornado(S, A, w, h) {
+  if (!A.hasData) return emptyChart(w, h, 'Enter price, cost and customers to see what moves your numbers');
+  const items = A.sens, n = items.length;
+  const m = { l: Math.min(140, w * 0.34), r: 16, t: 24, b: 28 };
+  const maxV = Math.max(...items.map(i => i.span), 1);
+  const sc = niceTicks(-maxV, maxV, 4);
+  const x = v => m.l + (v - sc.lo) / (sc.hi - sc.lo) * (w - m.l - m.r);
+  const rh = (h - m.t - m.b) / n;
+  let o = svgOpen(w, h, 'Change in cash after 24 months when each assumption moves');
+  for (const v of sc.ticks) o += Ln(x(v), m.t - 4, x(v), h - m.b, v === 0 ? 'ink2' : 'grid', v === 0 ? 1.5 : 1) + T(x(v), h - 10, fmtK(v));
+  o += T(x(sc.lo) + 2, 10, 'Worse case', { a: 'start', c: 'critical', w: 600 }) + T(x(sc.hi) - 2, 10, 'Better case', { a: 'end', c: 'good', w: 600 });
+  items.forEach((it, i) => {
+    const cy = m.t + i * rh + rh / 2, bh = Math.min(20, rh * 0.62);
+    const draw = (v, c, lbl) => {
+      const x0 = x(0), x1 = x(v), left = Math.min(x0, x1), wd = Math.max(1, Math.abs(x1 - x0));
+      return `<rect x="${left.toFixed(1)}" y="${(cy - bh / 2).toFixed(1)}" width="${wd.toFixed(1)}" height="${bh.toFixed(1)}" rx="2" style="fill:${C(c)}"/>`;
+    };
+    o += T(m.l - 8, cy + 4, it.label, { a: 'end', c: 'ink' });
+    o += draw(it.lo, it.lo < 0 ? 'critical' : 'good') + draw(it.hi, it.hi >= 0 ? 'good' : 'critical');
+    if (!PDFMODE) {
+      const tip = `${it.label}\n${it.loLabel}: ${it.lo >= 0 ? '+' : ''}${money(it.lo)}\n${it.hiLabel}: ${it.hi >= 0 ? '+' : ''}${money(it.hi)}\n(change in cash at month 24)`;
+      o += `<g class="col" data-tip="${esc(tip)}"><rect class="hit" x="${m.l}" y="${(cy - rh / 2).toFixed(1)}" width="${w - m.l - m.r}" height="${rh.toFixed(1)}"/></g>`;
+    }
+  });
+  return o + '</svg>';
+}
+function tblSens(A) {
+  const r = A.sens.map(i => `<tr><td>${i.label}</td><td>${i.loLabel}: ${money(i.lo)}</td><td>${i.hiLabel}: ${money(i.hi)}</td></tr>`).join('');
+  return `<table class="tbl mini"><thead><tr><th>Assumption</th><th>Worse case</th><th>Better case</th></tr></thead><tbody>${r}</tbody></table>`;
+}
+
+/* ---------- 7. ring gauge ---------- */
+function ring(value, size, label, sub, colorKey) {
+  const r = size / 2 - 11, cx = size / 2, cy = size / 2, circ = 2 * Math.PI * r, v = clamp(value, 0, 100);
+  const dash = (v / 100) * circ;
+  return `${svgOpen(size, size, label + ' ' + Math.round(v))}
+  <circle cx="${cx}" cy="${cy}" r="${r}" style="fill:none;stroke:${C('grid')};stroke-width:10"/>
+  <circle cx="${cx}" cy="${cy}" r="${r}" transform="rotate(-90 ${cx} ${cy})" style="fill:none;stroke:${C(colorKey)};stroke-width:10;stroke-linecap:round;stroke-dasharray:${dash.toFixed(1)} ${circ.toFixed(1)}"/>
+  ${T(cx, cy + (size > 150 ? 6 : 5), Math.round(v), { c: 'ink', s: size > 150 ? 40 : 24, w: 700 })}
+  ${size > 150 ? T(cx, cy + 30, sub, { c: 'mute', s: 12 }) : ''}</svg>`;
+}
+
+/* ---------- 8. season shape ---------- */
+function chSeason(S, A, w, h) {
+  const idx = A.D.seasonNorm, m = { l: 34, r: 8, t: 10, b: 24 };
+  const mx = Math.max(1.6, ...idx) * 1.05;
+  const y = v => m.t + (1 - v / mx) * (h - m.t - m.b), bw = (w - m.l - m.r) / 12;
+  let o = svgOpen(w, h, 'Seasonal sales index by calendar month');
+  for (const v of [0, 0.5, 1, 1.5]) if (v <= mx) o += Ln(m.l, y(v), w - m.r, y(v), v === 1 ? 'ink2' : 'grid', 1, v === 1 ? '3 3' : null) + T(m.l - 5, y(v) + 3.5, v.toFixed(1), { a: 'end' });
+  idx.forEach((v, i) => {
+    const cx = m.l + (i + 0.5) * bw, open = i === num(S.meta.openMonth) - 1;
+    o += `<g class="col" data-tip="${esc(MONTH_NAMES[i] + ': sales index ' + v.toFixed(2) + (open ? ' (opening month)' : ''))}"><rect x="${(cx - bw * 0.32).toFixed(1)}" y="${y(v).toFixed(1)}" width="${(bw * 0.64).toFixed(1)}" height="${Math.max(1, y(0) - y(v)).toFixed(1)}" rx="2" style="fill:${C(open ? 's2' : 's1')}"/><rect class="hit" x="${(cx - bw / 2).toFixed(1)}" y="${m.t}" width="${bw.toFixed(1)}" height="${h - m.t - m.b}"/></g>`;
+    o += T(cx, h - 8, MONTH_NAMES[i].slice(0, 1), { s: 10 });
+  });
+  return o + '</svg>';
+}
+
+/* ---------- 9. check-ins: plan vs actual ---------- */
+function chPlanActual(S, A, CK, w, h, kind) {
+  const rows = CK.rows;
+  if (!rows.length) return emptyChart(w, h, 'Add a monthly check-in to compare plan and actual');
+  const H = Math.min(HORIZON, Math.max(12, rows[rows.length - 1].t + 3));
+  const planArr = kind === 'cash' ? A.E.cash : A.E.rev;
+  const key = kind === 'cash' ? 'cash' : 'revenue';
+  const m = { l: 54, r: 14, t: 14, b: 40 };
+  const vals = []; for (let t = 1; t <= H; t++) vals.push(planArr[t]); rows.forEach(r => vals.push(num(r[key])));
+  const sc = niceTicks(Math.min(0, ...vals), Math.max(...vals), 5);
+  const x = t => m.l + (t - 1) / (H - 1) * (w - m.l - m.r), y = v => m.t + (sc.hi - v) / (sc.hi - sc.lo) * (h - m.t - m.b);
+  let o = svgOpen(w, h, kind === 'cash' ? 'Cash: plan against actual' : 'Revenue: plan against actual');
+  o += gridY(m, w, h, sc.ticks, y, fmtK);
+  for (let t = 1; t <= H; t++) if (t === 1 || t % 3 === 0) o += T(x(t), h - 24, String(t));
+  o += T((m.l + w - m.r) / 2, h - 8, 'Month since opening', { c: 'ink2' });
+  let d = ''; for (let t = 1; t <= H; t++) d += `${t > 1 ? 'L' : 'M'}${x(t).toFixed(1)},${y(planArr[t]).toFixed(1)}`;
+  o += `<path d="${d}" style="fill:none;stroke:${C('s1')};stroke-width:2.5;stroke-dasharray:6 4"/>`;
+  o += `<path d="${rows.map((r, i) => `${i ? 'L' : 'M'}${x(r.t).toFixed(1)},${y(num(r[key])).toFixed(1)}`).join('')}" style="fill:none;stroke:${C('s2')};stroke-width:2.5"/>`;
+  rows.forEach(r => {
+    const plan = planArr[r.t];
+    o += `<circle cx="${x(r.t).toFixed(1)}" cy="${y(num(r[key])).toFixed(1)}" r="5" style="fill:${C('s2')};stroke:${C('surface')};stroke-width:2"/>`;
+    if (!PDFMODE) {
+      const tip = `${openingMonthLabel(S, r.t)} (month ${r.t})\nActual: ${money(num(r[key]))}\nPlan: ${money(plan)}\n${plan ? Math.round(num(r[key]) / plan * 100) + '% of plan' : ''}`;
+      o += `<g class="col" data-tip="${esc(tip)}"><rect class="hit" x="${(x(r.t) - 14).toFixed(1)}" y="${m.t}" width="28" height="${h - m.t - m.b}"/></g>`;
+    }
+  });
+  const last = rows[rows.length - 1];
+  o += T(x(last.t) + 8, y(num(last[key])) - 8, 'Actual', { a: last.t > H * 0.8 ? 'end' : 'start', c: 'ink', w: 600 });
+  o += T(x(H), y(planArr[H]) - 8, 'Plan', { a: 'end', c: 'ink', w: 600 });
+  return o + '</svg>';
+}
+
+/* ---------- SVG to PNG for the PDF ---------- */
+function svgToPng(svg, w, h, scale = 2) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      const cv = document.createElement('canvas'); cv.width = w * scale; cv.height = h * scale;
+      const cx = cv.getContext('2d'); cx.fillStyle = '#ffffff'; cx.fillRect(0, 0, cv.width, cv.height);
+      cx.drawImage(img, 0, 0, cv.width, cv.height); resolve(cv.toDataURL('image/png'));
+    };
+    img.onerror = () => reject(new Error('chart image failed'));
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  });
+}
+/* ============================================================
+   UI CORE — state, storage, binding, tables, live strip
+   ============================================================ */
+const KEY = 'bmpa_mvc_v1', THEME_KEY = 'bmpa_mvc_theme';
+let S = null, A = null, TAB = 'creed';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const memStore = {};
+function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return memStore[k] ?? null; } }
+function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { memStore[k] = v; } }
+
+function fillDefaults(base, obj) {
+  if (Array.isArray(base)) return Array.isArray(obj) ? obj : base;
+  if (base && typeof base === 'object') {
+    const out = {};
+    for (const k in base) out[k] = fillDefaults(base[k], obj && typeof obj === 'object' ? obj[k] : undefined);
+    if (obj && typeof obj === 'object') for (const k in obj) if (!(k in base)) out[k] = obj[k];
+    return out;
+  }
+  return obj === undefined || obj === null ? base : obj;
+}
+function loadState() {
+  const raw = lsGet(KEY);
+  if (raw) { try { return fillDefaults(blankState(), JSON.parse(raw)); } catch (e) { /* fall through */ } }
+  return sampleState();
+}
+let saveTimer = null;
+function saveSoon() { clearTimeout(saveTimer); saveTimer = setTimeout(() => lsSet(KEY, JSON.stringify(S)), 250); }
+
+const getPath = (o, p) => p.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
+function setPath(o, p, v) { const ks = p.split('.'); let a = o; for (let i = 0; i < ks.length - 1; i++) a = a[ks[i]]; a[ks[ks.length - 1]] = v; }
+
+function toast(msg, ms = 2600) {
+  const t = $('#toast'); t.textContent = msg; t.classList.add('on');
+  clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('on'), ms);
+}
+
+/* ---------- field builders ---------- */
+const fid = k => 'f_' + k.replace(/\./g, '_');
+function F(o) {
+  const id = fid(o.k), t = o.t || 'num';
+  let ctl;
+  if (t === 'sel') ctl = `<div class="inp"><select id="${id}" data-k="${o.k}" data-t="${o.num ? 'num' : 'str'}">${o.opts.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('')}</select></div>`;
+  else if (t === 'area') ctl = `<textarea class="ta" id="${id}" data-k="${o.k}" data-t="str" rows="${o.rows || 3}" placeholder="${esc(o.ph || '')}"></textarea>`;
+  else if (t === 'text') ctl = `<div class="inp"><input id="${id}" type="text" data-k="${o.k}" data-t="str" placeholder="${esc(o.ph || '')}" autocomplete="off"></div>`;
+  else ctl = `<div class="inp"><input id="${id}" type="number" inputmode="decimal" data-k="${o.k}" data-t="num" step="${o.step || 'any'}" min="${o.min ?? 0}"${o.max != null ? ` max="${o.max}"` : ''}>${o.unit ? `<span class="u">${o.unit}</span>` : ''}</div>`;
+  return `<div class="field"${o.wide ? ' style="grid-column:1/-1"' : ''}><label for="${id}">${o.label}</label>${ctl}${o.hint ? `<div class="hint">${o.hint}</div>` : ''}</div>`;
+}
+
+/* ---------- editable tables ---------- */
+const START_TYPES = [['fitout', 'Fit-out / renovation'], ['equipment', 'Equipment / furniture'], ['licence', 'Licences / legal'], ['inventory', 'Opening inventory'], ['other', 'Other']];
+const SRC_KINDS = [['equity', 'Own / partner money'], ['debt', 'Loan (repaid)'], ['grant', 'Grant (not repaid)']];
+const TBL = {
+  startup: { cols: [['name', 'text', 'Item', 'Fit-out'], ['type', 'sel', 'Kind', START_TYPES], ['amount', 'num', 'SAR']], add: () => ({ name: '', type: 'other', amount: 0 }), sum: 'amount', sumLabel: 'Listed total', empty: 'No start-up costs yet. Add the first item.' },
+  sources: { cols: [['name', 'text', 'Source', 'Savings'], ['kind', 'sel', 'Type', SRC_KINDS], ['amount', 'num', 'SAR'], ['rate', 'num', 'Rate % / yr'], ['term', 'num', 'Months']], add: () => ({ name: '', kind: 'equity', amount: 0, rate: 0, term: 0 }), sum: 'amount', sumLabel: 'Total raised', empty: 'No funding sources yet. Add your own savings first.' },
+  fixed: { cols: [['name', 'text', 'Monthly cost', 'Staff wages'], ['monthly', 'num', 'SAR / month']], add: () => ({ name: '', monthly: 0 }), sum: 'monthly', sumLabel: 'Total per month', empty: 'No monthly costs yet. Add staff, utilities and marketing.' },
+  checkins: { cols: [['month', 'month', 'Month'], ['revenue', 'num', 'Revenue (SAR)'], ['costs', 'num', 'Costs paid (SAR)'], ['cash', 'num', 'Cash in bank (SAR)']], add: () => ({ month: nextCheckinMonth(), revenue: 0, costs: 0, cash: 0 }), empty: 'No check-ins yet. Add the first month once you have real numbers.' }
+};
+function nextCheckinMonth() {
+  const rows = S.checkins || [];
+  let y = num(S.meta.openYear), m = num(S.meta.openMonth);
+  if (rows.length) { const mm = /^(\d{4})-(\d{2})$/.exec(rows[rows.length - 1].month || ''); if (mm) { y = +mm[1]; m = +mm[2] + 1; if (m > 12) { m = 1; y++; } } }
+  return y + '-' + String(m).padStart(2, '0');
+}
+function renderTable(name) {
+  const el = $(`[data-table="${name}"]`); if (!el) return;
+  const T = TBL[name], rows = S[name] || [];
+  let h = `<div class="tscroll"><table class="tbl"><thead><tr>${T.cols.map(c => `<th>${c[2]}</th>`).join('')}<th><span class="sr" style="position:absolute;left:-9999px">Remove</span></th></tr></thead><tbody>`;
+  if (!rows.length) h += `<tr><td colspan="${T.cols.length + 1}" class="muted small" style="padding:14px 8px">${T.empty}</td></tr>`;
+  rows.forEach((r, i) => {
+    h += '<tr>';
+    for (const c of T.cols) {
+      const k = `${name}.${i}.${c[0]}`, id = fid(k);
+      if (c[1] === 'sel') h += `<td><div class="inp"><select id="${id}" data-k="${k}" data-t="str" aria-label="${c[2]}">${c[3].map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('')}</select></div></td>`;
+      else if (c[1] === 'text') h += `<td style="min-width:210px"><div class="inp"><input id="${id}" type="text" data-k="${k}" data-t="str" placeholder="${esc(c[3] || '')}" aria-label="${c[2]}" autocomplete="off"></div></td>`;
+      else if (c[1] === 'month') h += `<td style="min-width:130px"><div class="inp"><input id="${id}" type="month" data-k="${k}" data-t="str" placeholder="YYYY-MM" aria-label="${c[2]}"></div></td>`;
+      else h += `<td style="min-width:104px"><div class="inp"><input id="${id}" type="number" inputmode="decimal" step="any" data-k="${k}" data-t="num" aria-label="${c[2]}"></div></td>`;
+    }
+    h += `<td><button class="rm" type="button" data-rm="${name}:${i}" aria-label="Remove row ${i + 1}">×</button></td></tr>`;
+  });
+  h += '</tbody>';
+  if (T.sum && rows.length) h += `<tfoot><tr><td colspan="${T.cols.length - 1}" class="r">${T.sumLabel}</td><td class="num" id="sum_${name}">${money(sum(rows, T.sum))}</td><td></td></tr></tfoot>`;
+  h += `</table></div><button class="btn sm addrow" type="button" data-add="${name}">+ Add a row</button>`;
+  el.innerHTML = h;
+  syncInputs(el);
+}
+
+function syncInputs(root = document) {
+  $$('[data-k]', root).forEach(el => {
+    const v = getPath(S, el.dataset.k);
+    if (el.type === 'checkbox') el.checked = !!v;
+    else el.value = v == null ? '' : (el.dataset.t === 'num' && v === 0 && el.type === 'number' ? '0' : v);
+  });
+}
+
+/* ---------- events ---------- */
+function onInput(e) {
+  const el = e.target.closest('[data-k]'); if (!el) return;
+  let v;
+  if (el.type === 'checkbox') v = el.checked;
+  else if (el.dataset.t === 'num') v = el.value === '' ? 0 : parseFloat(el.value);
+  else v = el.value;
+  if (typeof v === 'number' && !isFinite(v)) v = 0;
+  setPath(S, el.dataset.k, v);
+  if (el.dataset.k === 'season.preset') { S.season.idx = SEASON_PRESETS[v].idx.slice(); syncInputs($('#panels')); }
+  if (el.dataset.k.startsWith('season.idx.')) S.season.preset = 'custom';
+  if (el.dataset.k === 'unc.auto') applyUncState();
+  if (el.dataset.k.startsWith('season.idx.') || el.dataset.k === 'season.preset') { const p = $('#f_season_preset'); if (p) p.value = S.season.preset; }
+  refreshSoon(); saveSoon();
+}
+function applyUncState() { const r = $('#f_unc_sigma'); if (r) r.disabled = !!S.unc.auto; const o = $('#sigmaOut'); if (o) o.textContent = (S.unc.auto && A ? A.D.sigma : num(S.unc.sigma)).toFixed(2); }
+
+function onClick(e) {
+  const rm = e.target.closest('[data-rm]');
+  if (rm) { const [n, i] = rm.dataset.rm.split(':'); S[n].splice(+i, 1); renderTable(n); refreshSoon(); saveSoon(); return; }
+  const add = e.target.closest('[data-add]');
+  if (add) { const n = add.dataset.add; S[n].push(TBL[n].add()); renderTable(n); const last = $$(`[data-table="${n}"] tbody tr:last-child input`)[0]; if (last) last.focus(); refreshSoon(); saveSoon(); return; }
+  const go = e.target.closest('[data-go]');
+  if (go) { setTab(go.dataset.go, true); return; }
+  const tab = e.target.closest('.tab');
+  if (tab) { setTab(tab.dataset.tab, false); return; }
+  if (e.target.closest('[data-act="pdf"]')) { makePdf(); return; }
+  if (e.target.closest('[data-act="clear"]')) { clearSample(); return; }
+}
+
+/* ---------- refresh pipeline ---------- */
+let rT = null;
+function refreshSoon() { clearTimeout(rT); rT = setTimeout(refresh, 110); }
+function refresh() {
+  A = analyse(S);
+  A.blank = isBlank(S);
+  $('#banner').hidden = !S.sample;
+  updateRail(); updateLive(); renderActive();
+}
+function isBlank(S) {
+  return num(S.demand.price) === 0 && sum(S.startup, 'amount') === 0 && sum(S.sources, 'amount') === 0 && num(S.lease.rent) === 0 &&
+    num(S.problem.interviews) === 0 && !(S.creed.gates || []).some(Boolean) && !(S.checkins || []).length;
+}
+
+const pillHTML = (key, label) => `<span class="pill ${key}">${label}</span>`;
+function updateRail() {
+  const map = { creed: 'creed', customer: 'customer', place: 'place', capital: 'capital', calc: 'calc' };
+  $$('.tab').forEach(t => {
+    const id = t.dataset.tab, d = t.querySelector('.dot'); if (!d) return;
+    let k = '';
+    if (!A.blank) {
+      if (map[id]) k = A.stageStatus[map[id]].key;
+      else if (id === 'commerce') k = A.verdict.key;
+      else if (id === 'compass') { const ck = checkinAnalysis(S, A); k = ck.status ? ck.status.key : ''; }
+    }
+    d.className = 'dot ' + k;
+  });
+}
+function updateLive() {
+  const D = A.D, v = A.verdict;
+  if (A.blank) {
+    $('#live').innerHTML = `<div class="verdict"><div><div class="stat"><div class="k">Compass reading</div></div><div class="vtext">Not started</div><div class="small muted">Enter your numbers, stage by stage. Everything below updates as you type.</div></div></div>
+      ${['Viability score', 'Survival odds', 'Break-even', 'Capital'].map(k => `<div class="stat"><div class="k">${k}</div><div class="v">—</div></div>`).join('')}`;
+    return;
+  }
+  const gap = A.gap90;
+  $('#live').innerHTML = `
+    <div class="verdict"><div>
+      <div class="stat"><div class="k">Compass reading</div></div>
+      <div class="vtext">${v.label}</div>
+      <div class="small muted">${v.line}</div></div></div>
+    <div class="stat"><div class="k">Viability score</div><div class="v">${Math.round(A.score)}<span class="muted small"> / 100</span></div><div class="s">Weighted across five stages</div></div>
+    <div class="stat"><div class="k">Survival odds</div><div class="v">${A.hasData ? Math.round(A.survival) + '%' : '—'}</div><div class="s">Cash lasts 24 months</div></div>
+    <div class="stat"><div class="k">Break-even</div><div class="v">${isFinite(A.bePerDay) && A.hasData ? Math.round(A.bePerDay) + '<span class="muted small"> / day</span>' : '—'}</div><div class="s">${A.hasData ? 'Forecast ' + Math.round(A.fcPerDay) + ' a day' : 'Needs price and cost'}</div></div>
+    <div class="stat"><div class="k">Capital</div><div class="v">${D.sources ? fmtK(D.sources) : '—'}<span class="muted small"> raised</span></div><div class="s">${A.hasData ? (gap > 0 ? 'Short by ' + fmtK(gap) + ' for 90% odds' : 'Covers 90% confidence') : 'Needs sales forecast'}</div></div>`;
+}
+
+/* ---------- tabs ---------- */
+function setTab(id, scroll) {
+  TAB = id;
+  $$('.tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === id)));
+  $$('.panel').forEach(p => p.classList.toggle('on', p.id === 'p-' + id));
+  if (A) renderActive();
+  if (scroll) window.scrollTo({ top: Math.max(0, $('.rail').offsetTop - 2), behavior: 'smooth' });
+  const t = $(`.tab[data-tab="${id}"]`); if (t && t.scrollIntoView) t.scrollIntoView({ inline: 'center', block: 'nearest' });
+}
+function buildRail() {
+  let h = '';
+  STAGES.forEach(s => { h += `<button class="tab" role="tab" type="button" data-tab="${s.id}" aria-selected="false" aria-controls="p-${s.id}"><span class="rn">${s.n}</span><span><span class="tn">${s.name}</span><span class="ts">${s.sub}</span></span><span class="dot"></span></button>`; });
+  h += '<span class="tabsep"></span>';
+  h += `<button class="tab" role="tab" type="button" data-tab="compass" aria-selected="false" aria-controls="p-compass"><span class="rn">◎</span><span><span class="tn">Compass</span><span class="ts">Monthly check-ins</span></span><span class="dot"></span></button>`;
+  h += `<button class="tab" role="tab" type="button" data-tab="method" aria-selected="false" aria-controls="p-method"><span class="rn">?</span><span><span class="tn">Method</span><span class="ts">How it works</span></span></button>`;
+  $('#rail').innerHTML = h;
+  $('#rail').addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const tabs = $$('.tab'), i = tabs.findIndex(t => t.dataset.tab === TAB), j = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+    setTab(tabs[j].dataset.tab, false); tabs[j].focus();
+  });
+}
+
+/* ---------- tooltip ---------- */
+function initTip() {
+  const tip = $('#tip');
+  const show = e => {
+    const t = e.target.closest ? e.target.closest('[data-tip]') : null;
+    if (!t) { tip.classList.remove('on'); return; }
+    tip.textContent = t.dataset.tip; tip.classList.add('on');
+    const r = tip.getBoundingClientRect();
+    let x = e.clientX + 14, y = e.clientY + 14;
+    if (x + r.width > window.innerWidth - 8) x = e.clientX - r.width - 14;
+    if (y + r.height > window.innerHeight - 8) y = e.clientY - r.height - 14;
+    tip.style.left = Math.max(8, x) + 'px'; tip.style.top = Math.max(8, y) + 'px';
+  };
+  document.addEventListener('pointermove', show);
+  document.addEventListener('pointerdown', show);
+  document.addEventListener('pointerleave', () => tip.classList.remove('on'));
+  window.addEventListener('scroll', () => tip.classList.remove('on'), { passive: true });
+}
+
+/* ---------- sample / clear ---------- */
+function replaceState(next) {
+  S = next; lsSet(KEY, JSON.stringify(S));
+  ['startup', 'sources', 'fixed', 'checkins'].forEach(renderTable);
+  syncInputs($('#panels')); applyUncState();
+  refresh();
+}
+function clearSample() {
+  replaceState(blankState());
+  setTab('creed', true);
+  toast('Sample data cleared. Start with Stage I and enter your own numbers.');
+}
+
+/* ---------- charts in the active panel ---------- */
+function chartHeight(kind, w) {
+  const n = w < 520;
+  return ({ fan: n ? 250 : 310, be: n ? 260 : 310, monthly: n ? 230 : 260, capital: n ? 190 : 170, rent: n ? 260 : 270, tornado: n ? 360 : 340, season: 130, plan: n ? 230 : 250, planCash: n ? 230 : 250 })[kind] || 260;
+}
+function renderKind(kind, w, h) {
+  switch (kind) {
+    case 'fan': return chFan(S, A, w, h);
+    case 'be': return chBreakeven(S, A, w, h);
+    case 'monthly': return chMonthly(S, A, w, h);
+    case 'capital': return chCapital(S, A, w, h);
+    case 'rent': return chRent(S, A, w, h);
+    case 'tornado': return chTornado(S, A, w, h);
+    case 'season': return chSeason(S, A, w, h);
+    case 'plan': return chPlanActual(S, A, checkinAnalysis(S, A), w, h, 'rev');
+    case 'planCash': return chPlanActual(S, A, checkinAnalysis(S, A), w, h, 'cash');
+  }
+  return '';
+}
+function drawCharts() {
+  const root = $('.panel.on'); if (!root) return;
+  $$('[data-chart]', root).forEach(el => {
+    const w = Math.floor(el.clientWidth); if (w < 120) return;
+    el.innerHTML = renderKind(el.dataset.chart, Math.max(280, w), chartHeight(el.dataset.chart, w));
+  });
+  $$('[data-tv]', root).forEach(el => {
+    const k = el.dataset.tv;
+    el.innerHTML = k === 'fan' ? (A.hasData ? tblFan(S, A) : '') : k === 'rent' ? (A.hasData && A.D.rent > 0 ? tblRent(A) : '') : k === 'tornado' ? (A.hasData ? tblSens(A) : '') : '';
+  });
+}
+/* ============================================================
+   PANELS — form markup per stage and live readings
+   ============================================================ */
+const LV = { good: 'Strong', warn: 'Watch', critical: 'Fix' };
+const chartCard = (kind, title, how, legend, tv) => `
+  <div class="card"><h3>${title}</h3><p class="lede">${how}</p>
+  <div class="chart" data-chart="${kind}"></div>${legend ? `<div class="legend">${legend}</div>` : ''}
+  ${tv ? `<details class="tv"><summary>View as a table</summary><div class="tscroll" data-tv="${tv}"></div></details>` : ''}</div>`;
+const lg = (c, t, ln) => `<span><i class="${ln ? 'ln' : ''}" style="background:var(--${c})"></i>${t}</span>`;
+const head = (eyebrow, title, intro) => `<div class="phead"><div class="eyebrow">${eyebrow}</div><h2>${title}</h2><p class="muted">${intro}</p></div>`;
+const nextBtn = (id, label) => `<div><button class="btn" type="button" data-go="${id}">${label} →</button></div>`;
+
+function buildPanels() {
+  const P = {};
+  const sectorOpts = Object.entries(SECTORS).map(([k, v]) => [k, v.label]);
+  const monthOpts = MONTH_NAMES.map((m, i) => [i + 1, m]);
+
+  P.creed = head('Stage I · Creed', 'Begin with your creed', 'Numbers decide whether a business can survive. Your creed decides whether it deserves to. Answer plainly, then let the compass test the rest.') + `
+  <div class="stage"><div class="col">
+    <div class="card"><h3>Your venture</h3><p class="lede">The basics that frame every number that follows.</p>
+      <div class="grid">
+        ${F({ k: 'meta.venture', t: 'text', label: 'Venture name', ph: 'e.g. Al-Noor Bakery' })}
+        ${F({ k: 'meta.owner', t: 'text', label: 'Owner', ph: 'Your name' })}
+        ${F({ k: 'meta.sector', t: 'sel', label: 'Sector', opts: sectorOpts, hint: 'Sets the rent ceiling used to judge your lease.' })}
+        ${F({ k: 'meta.district', t: 'text', label: 'Neighbourhood in Madinah', ph: 'e.g. near Quba Road' })}
+        ${F({ k: 'meta.openMonth', t: 'sel', num: true, label: 'Opening month', opts: monthOpts })}
+        ${F({ k: 'meta.openYear', label: 'Opening year', step: 1, min: 2024, max: 2040 })}
+      </div></div>
+    <div class="card"><h3>Your creed statement</h3><p class="lede">In a sentence or two, say who you serve, how you will earn, and what you will never do for profit.</p>
+      ${F({ k: 'creed.statement', t: 'area', label: 'Creed statement', rows: 4, ph: 'My business exists to…' }).replace('class="field"', 'class="field" style="margin-bottom:14px"')}
+      <div class="rows" role="group" aria-label="Creed gates">${GATES.map((g, i) => `<label class="check"><input type="checkbox" data-k="creed.gates.${i}" data-t="bool" id="gate${i}"><span>${g}</span></label>`).join('')}</div></div>
+    ${nextBtn('customer', 'Continue to Stage II: Customer')}
+  </div><div class="col"><div class="card sticky readbox" id="rd-creed"></div></div></div>`;
+
+  P.customer = head('Stage II · Customer', 'Prove the problem is worth paying for', 'Many start-ups fail because nobody needed what they built, not because the rent was high. Evidence beats enthusiasm. Pre-sales beat interviews.') + `
+  <div class="stage"><div class="col">
+    <div class="card"><h3>The problem you solve</h3><p class="lede">Describe the customer and the pain in plain words.</p>
+      <div class="rows">${F({ k: 'problem.target', t: 'area', label: 'Who exactly is your customer?', rows: 2, ph: 'Where they live or work, what they need' })}
+      ${F({ k: 'problem.statement', t: 'area', label: 'What problem do they have today?', rows: 2, ph: 'What do they do now, and why is it not good enough?' })}</div></div>
+    <div class="card"><h3>Your evidence</h3><p class="lede">Count only real conversations and real payments. Friends and family do not count as customer evidence.</p>
+      <div class="grid">
+        ${F({ k: 'problem.interviews', label: 'Customer interviews held', step: 1, hint: 'People who match your target customer.' })}
+        ${F({ k: 'problem.urgentPct', label: 'Said the problem is urgent', unit: '%', max: 100, step: 1 })}
+        ${F({ k: 'problem.willPayPct', label: 'Said they would pay my price', unit: '%', max: 100, step: 1, hint: 'Words are weak evidence.' })}
+        ${F({ k: 'problem.presales', label: 'Paid pre-sales or deposits', step: 1, hint: 'Money in your hand is the strongest proof.' })}
+        ${F({ k: 'problem.diff', label: 'How different are you? (1 to 5)', step: 1, min: 1, max: 5, hint: '1 = same as nearby options, 5 = clearly better.' })}
+      </div></div>
+    ${nextBtn('place', 'Continue to Stage III: Place')}
+  </div><div class="col"><div class="card sticky readbox" id="rd-customer"></div></div></div>`;
+
+  P.place = head('Stage III · Place', 'Test the rent before you sign it', 'Rent is the cost you cannot negotiate after opening. See what share of sales it takes, how much cash it demands up front, and what happens if the shop is slower than you hope.') + `
+  <div class="stage"><div class="col">
+    <div class="card"><h3>The lease offer</h3><p class="lede">Enter what the landlord is asking, even while you negotiate.</p>
+      <div class="grid">
+        ${F({ k: 'lease.rent', label: 'Rent per month', unit: 'SAR', step: 100, hint: 'Quoted annual rent? Divide by 12 or use the helper below.' })}
+        <div class="field"><label for="annualHelper">Annual rent quoted (helper)</label><div class="inp"><input id="annualHelper" type="number" inputmode="decimal" min="0" step="any" placeholder="Type to set monthly rent"><span class="u">SAR</span></div></div>
+        ${F({ k: 'lease.payEvery', t: 'sel', num: true, label: 'Landlord is paid every', opts: [[1, 'Month'], [3, '3 months'], [6, '6 months'], [12, '12 months']], hint: 'Paid in advance. Longer periods drain cash at signing.' })}
+        ${F({ k: 'lease.term', label: 'Lease length', unit: 'years', step: 1, min: 0 })}
+        ${F({ k: 'lease.esc', label: 'Yearly rent increase', unit: '%', step: 0.5 })}
+        ${F({ k: 'lease.depositMonths', label: 'Deposit', unit: 'months', step: 0.5 })}
+        ${F({ k: 'lease.exit', t: 'sel', label: 'Exit option', opts: [['none', 'No exit clause'], ['clause', 'Break clause (about 3 months notice)']], hint: 'Can you leave early without paying the full term?' })}
+      </div></div>
+    ${nextBtn('capital', 'Continue to Stage IV: Capital')}
+  </div><div class="col"><div class="card sticky readbox" id="rd-place"></div></div></div>`;
+
+  P.capital = head('Stage IV · Capital', 'Size your capital, then use it with discipline', 'New owners usually underestimate what they need and then pay themselves from money meant to keep the doors open. List every cost to open, every source of money, and your own pay.') + `
+  <div class="stage"><div class="col">
+    <div class="card"><h3>Costs to open</h3><p class="lede">Everything you pay before and during opening, except rent, which is handled in Stage III.</p>
+      <div data-table="startup"></div>
+      <div class="grid" style="margin-top:14px">${F({ k: 'capital.overrun', label: 'Allowance for cost overruns', unit: '%', step: 1, hint: 'Opening projects rarely cost what the quote said. 15% to 30% is common.' })}</div></div>
+    <div class="card"><h3>Sources of money</h3><p class="lede">Only list money you can actually access. For a loan, enter the yearly rate (0 for interest-free) and months to repay.</p>
+      <div data-table="sources"></div></div>
+    <div class="card"><h3>Your own pay</h3><p class="lede">The most common capital mistake is paying yourself from the money that should carry the business through its first months.</p>
+      <div class="grid">
+        ${F({ k: 'owner.draw', label: 'Owner pay per month', unit: 'SAR', step: 250 })}
+        ${F({ k: 'owner.start', label: 'Pay starts in month', step: 1, min: 1, max: 24, hint: 'Month 1 is your first month open.' })}
+      </div></div>
+    ${nextBtn('calc', 'Continue to Stage V: Calculation')}
+  </div><div class="col"><div class="card sticky readbox" id="rd-capital"></div></div></div>`;
+
+  P.calc = head('Stage V · Calculation', 'Run the numbers behind every sale', 'Your price, your direct cost, your fixed costs and your customer count decide everything. This stage turns them into a break-even point and 24 months of simulated cash.') + `
+  <div class="stage"><div class="col">
+    <div class="card"><h3>What you earn on each sale</h3><p class="lede">Use one typical sale, such as one customer order. Enter prices without VAT.</p>
+      <div class="grid">
+        ${F({ k: 'demand.price', label: 'Average price per sale', unit: 'SAR', step: 0.5 })}
+        ${F({ k: 'demand.varCost', label: 'Direct cost per sale', unit: 'SAR', step: 0.5, hint: 'Ingredients, packaging, delivery fees, card fees.' })}
+        ${F({ k: 'demand.perDay', label: 'Customers per day when mature', step: 1, hint: 'Your honest best estimate once established.' })}
+        ${F({ k: 'demand.days', label: 'Days open per month', step: 1, max: 31, min: 1 })}
+        ${F({ k: 'demand.ramp', label: 'Months to reach maturity', step: 1, min: 1, max: 24, hint: 'Most new venues need 4 to 12 months.' })}
+      </div>
+      <label class="check" style="margin-top:14px"><input type="checkbox" data-k="demand.haircut" data-t="bool" id="f_haircut"><span><b>Adjust my forecast for the strength of my evidence.</b> Thin proof from Stage II lowers the customer count used in the model. Keep this on unless you have strong sales data.</span></label></div>
+    <div class="card"><h3>Monthly fixed costs</h3><p class="lede">Costs you pay whether or not anyone buys. Leave out rent, your own pay and loan repayments; those are entered in Stages III and IV.</p>
+      <div data-table="fixed"></div></div>
+    <div class="card"><h3>Madinah seasons</h3><p class="lede">Pilgrim and visitor flows rise and fall through the year. Ramadan and Hajj move about 11 days earlier each year, so adjust the shape for your opening year.</p>
+      <div class="grid">
+        ${F({ k: 'season.preset', t: 'sel', label: 'Seasonal pattern', opts: [...Object.entries(SEASON_PRESETS).map(([k, v]) => [k, v.label]), ['custom', 'Custom (my own numbers)']] })}
+        <div class="field"><label for="f_season_strength">How strongly seasons affect my sales</label><input class="range" type="range" id="f_season_strength" data-k="season.strength" data-t="num" min="0" max="1" step="0.05"><div class="hint">0% = ignore seasons, 100% = full swing.</div></div>
+      </div>
+      <div class="chart" data-chart="season" style="margin:12px 0 4px"></div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:8px">${MONTH_NAMES.map((m, i) => `<div class="field"><label for="f_season_idx_${i}" class="small">${m}</label><div class="inp"><input id="f_season_idx_${i}" type="number" step="0.05" min="0" data-k="season.idx.${i}" data-t="num" aria-label="Sales index for ${m}"></div></div>`).join('')}</div>
+      <p class="hint small muted" style="margin-top:6px">1.00 means an average month. 1.40 means 40% above average. The model rescales so the year averages 1.00.</p></div>
+    <div class="card"><h3>How uncertain are your sales?</h3><p class="lede">The simulation runs 500 possible futures. Wider uncertainty means more good and bad surprises.</p>
+      <label class="check"><input type="checkbox" data-k="unc.auto" data-t="bool" id="f_unc_auto"><span>Set uncertainty from my evidence (recommended). Less proof means a wider range.</span></label>
+      <div class="field" style="margin-top:12px"><label for="f_unc_sigma">Manual spread: <b id="sigmaOut">0.35</b></label><input class="range" type="range" id="f_unc_sigma" data-k="unc.sigma" data-t="num" min="0.05" max="0.8" step="0.05"></div></div>
+    ${nextBtn('commerce', 'See Stage VI: Commerce dashboard')}
+  </div><div class="col"><div class="card sticky readbox" id="rd-calc"></div></div></div>`;
+
+  P.commerce = head('Stage VI · Commerce', 'Your verdict and dashboard', 'Creed met the customer, the place and the capital. Here is what the numbers say about turning that creed into commerce.') + `
+  <div class="dash-top"><div class="card" id="dash-ring"></div><div class="card" id="dash-pillars"></div></div>
+  <div class="dgrid" style="margin-top:20px">
+    <div class="wide">${chartCard('fan', 'Will your cash last 24 months?', 'The shaded band holds the middle 80% of 500 simulated futures. If the lower edge dips under zero, in some futures you run out of money.', lg('s1', 'Median path', true) + lg('s1', 'Middle 80% of outcomes'), 'fan')}</div>
+    ${chartCard('capital', 'Capital needed versus capital raised', 'The needed bar is the amount that keeps cash above zero in 9 of 10 simulated futures.', lg('s2', 'Opening costs') + lg('s4', 'Ramp-up cushion') + lg('s1', 'Equity and grants') + lg('s3', 'Loans'))}
+    ${chartCard('be', 'Break-even', 'Where revenue crosses total cost, including rent, your pay and loan repayments.', lg('s1', 'Revenue', true) + lg('s2', 'Total cost', true))}
+    ${chartCard('rent', 'Rent stress test', 'Chance of surviving 24 months if the rent were higher or lower than your offer. Rent is the cost you cannot cut later.', lg('s1', 'Survival odds', true) + lg('s2', 'Your rent'), 'rent')}
+    ${chartCard('monthly', 'Expected result each month', 'Revenue minus every cost, including rent, loan repayments and your pay, on the expected path.', lg('good', 'Profit') + lg('critical', 'Loss'))}
+    <div class="wide">${chartCard('tornado', 'What moves your numbers most', 'Change in cash after 24 months when each assumption moves. Work hardest on the longest bars.', lg('critical', 'Worse case') + lg('good', 'Better case'), 'tornado')}</div>
+    <div class="card wide"><h3>Coach notes</h3><p class="lede">Plain-language findings from your numbers, grouped by stage.</p><div id="dash-notes"></div></div>
+    <div class="card flat wide"><div class="rowline"><div><h3>Take it with you</h3><p class="small muted">The report includes your Basmala heading, reading, charts, assumptions and coach notes.</p></div><button class="btn primary" style="background:var(--brand);border-color:var(--brand);color:var(--brand-ink)" type="button" data-act="pdf">Create PDF report</button></div></div>
+  </div>`;
+
+  P.compass = head('Compass · Check-ins', 'Measure whether you are moving the right way', 'After opening, or during a pilot, enter each month’s real results. The compass compares them with your plan and tells you whether you are on course, drifting or off course.') + `
+  <div class="stage"><div class="col">
+    <div class="card"><h3>Monthly check-ins</h3><p class="lede">Enter revenue and costs actually paid for each month, and the cash balance in the bank at month end. Months are counted from your opening month in Stage I.</p>
+      <div data-table="checkins"></div></div>
+    <div class="card flat"><h4>A simple monthly habit</h4><p class="small" style="margin-top:6px">Check in on the same day each month. Compare revenue with plan first, cash second. If revenue stays under 90% of plan for two months, change something now instead of waiting for the savings to run out.</p></div>
+  </div><div class="col"><div class="card sticky readbox" id="rd-compass"></div></div></div>
+  <div class="dgrid" style="margin-top:20px">
+    ${chartCard('plan', 'Revenue: plan versus actual', 'Dashed line is the expected plan from your model. Dots are your real months.', lg('s1', 'Plan', true) + lg('s2', 'Actual', true))}
+    ${chartCard('planCash', 'Cash: plan versus actual', 'Cash in the bank each month against the plan. A widening gap is the earliest warning.', lg('s1', 'Plan', true) + lg('s2', 'Actual', true))}
+  </div>`;
+
+  P.method = head('Method', 'How the compass reaches its numbers', 'Every output comes from formulas you can inspect. No hidden averages for Madinah are applied; you supply the local numbers and the compass tests them.') + `
+  <div class="dgrid">
+    <div class="card"><h3>Viability score</h3><p class="lede">A weighted score across five stages. Weights: Creed 10%, Customer 25%, Place 20%, Capital 25%, Calculation 20%.</p>
+      <ul class="small" style="margin:0;padding-left:20px;display:grid;gap:6px">
+      <li><b>Creed:</b> five readiness gates and a written statement.</li>
+      <li><b>Customer:</b> evidence score from interviews (15 points), urgency (20), stated willingness to pay (15), paid pre-sales (35) and difference from alternatives (15).</li>
+      <li><b>Place:</b> year-two rent as a share of revenue against a sector ceiling (70%), plus the rent you would still owe if you quit at month 6 (30%).</li>
+      <li><b>Capital:</b> capital raised against the amount needed for 90% confidence (70%), plus how much capital pays your own salary before break-even (30%).</li>
+      <li><b>Calculation:</b> margin per sale (25%), expected months to break-even (35%) and margin of safety over break-even customers (40%).</li></ul></div>
+    <div class="card"><h3>Survival odds</h3><p class="lede">A Monte Carlo simulation of 500 futures over 24 months.</p>
+      <p class="small">Each future varies customer volume, ramp-up speed, cost levels, start-up cost overruns and month-to-month noise. Rent and your price are held as entered. A future “survives” if the bank balance never goes below zero, counting rent paid in advance, loan repayments and your pay.</p>
+      <p class="small" style="margin-top:8px">The spread of customer volume comes from your evidence score: strong proof narrows it, thin proof widens it. You can set it by hand in Stage V.</p></div>
+    <div class="card"><h3>Evidence adjustment</h3><p class="lede">Why your forecast may be reduced.</p>
+      <p class="small">When on, the customer count you enter is multiplied by 0.55 + 0.45 × (evidence score ÷ 100). With a score of 100 nothing changes. With a score of 0 your forecast is cut by 45%. This guards against the common habit of planning on the best day.</p></div>
+    <div class="card"><h3>Compass reading</h3><p class="lede">The headline verdict.</p>
+      <p class="small">Reading = 50% viability score + 50% survival odds. Strong 75 and above, Promising 60 to 74, Fragile 45 to 59, Off course below 45.</p></div>
+    <div class="card"><h3>Capital needed</h3><p class="lede">Why the number may be larger than your budget.</p>
+      <p class="small">In every simulated future the app finds the lowest point of the cash balance. Capital needed for 90% confidence is your raised capital minus the 90th-percentile worst low point. It therefore includes the losses of the early months and slow seasons, not just the cost of opening.</p></div>
+    <div class="card"><h3>Rent, break-even and the owner</h3><p class="lede">Other formulas in plain terms.</p>
+      <ul class="small" style="margin:0;padding-left:20px;display:grid;gap:6px">
+      <li><b>Break-even customers a day</b> = (fixed costs + rent + your pay + loan repayments) ÷ (price − direct cost) ÷ days open.</li>
+      <li><b>Rent share</b> = average year-two rent ÷ average year-two revenue.</li>
+      <li><b>Sustainable owner pay</b> = half of year-two profit after loan repayments.</li>
+      <li><b>Debt cover</b> = year-two operating profit ÷ loan repayments. Aim for 1.25 or more.</li></ul></div>
+    <div class="card wide"><h3>What this tool cannot do</h3><p class="small">It cannot know your neighbourhood, your landlord or your customers. Sector rent ceilings (F&B 10%, retail 12%, services 15%, hospitality 18%, production 8%, online 5%) and the seasonal presets are working rules of thumb and illustrative shapes; replace them with your own data as you gather it. It ignores VAT, zakat and income-type taxes, so enter prices without VAT and keep a reserve. Always confirm licensing, lease and financing terms with the relevant authorities and a qualified adviser.</p></div>
+  </div>`;
+
+  const host = $('#panels');
+  host.innerHTML = Object.entries(P).map(([id, html]) => `<section class="panel" id="p-${id}" role="tabpanel">${html}</section>`).join('');
+  // helper: annual -> monthly rent
+  const ah = $('#annualHelper');
+  if (ah) ah.addEventListener('input', () => { const v = parseFloat(ah.value); if (isFinite(v)) { S.lease.rent = Math.round(v / 12 * 100) / 100; $('#f_lease_rent').value = S.lease.rent; refreshSoon(); saveSoon(); } });
+}
+
+/* ---------- readings ---------- */
+const notesFor = stage => {
+  const n = A.notes.filter(x => x.stage === stage);
+  return n.length ? `<div>${n.map(x => `<div class="note"><span class="pill ${x.level}">${LV[x.level]}</span><p>${esc(x.text)}</p></div>`).join('')}</div>` : '';
+};
+const stageHead = (key, title) => {
+  const st = A.stageStatus[key], v = A.pillars[key];
+  return `<div class="rowline"><h3>${title}</h3>${A.blank ? '' : pillHTML(st.key, st.label)}</div>
+  <div><div class="rowline small"><span class="muted">Stage score</span><b>${A.blank ? '—' : Math.round(v) + ' / 100'}</b></div><div class="meter ${A.blank ? '' : st.key}" style="margin-top:6px"><i style="width:${A.blank ? 0 : v}%"></i></div></div>`;
+};
+const kv = rows => `<dl class="kv">${rows.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl>`;
+const leaseTotal = () => { let t = 0; const y = Math.round(num(S.lease.term)); for (let i = 0; i < y; i++) t += num(S.lease.rent) * 12 * Math.pow(1 + num(S.lease.esc) / 100, i); return t; };
+
+function readCreed() {
+  const g = S.creed.gates.filter(Boolean).length;
+  return `${stageHead('creed', 'Creed reading')}
+  <p class="small"><b>${g} of ${GATES.length}</b> gates closed. Statement ${(S.creed.statement || '').trim().length >= 30 ? 'written' : 'not yet written'}.</p>
+  ${notesFor('Creed')}
+  <div class="callout">Creed-to-Commerce™: profit is the result of faithful service, not the purpose of the business. When a shortcut pays but breaks your red lines, the creed decides.</div>`;
+}
+function readCustomer() {
+  const p = S.problem, D = A.D;
+  const pts = [['Customer interviews', clamp(num(p.interviews) / 30, 0, 1) * 15, 15], ['Problem is urgent', clamp(num(p.urgentPct) / 100, 0, 1) * 20, 20], ['Say they would pay', clamp(num(p.willPayPct) / 100, 0, 1) * 15, 15], ['Paid pre-sales', clamp(num(p.presales) / 10, 0, 1) * 35, 35], ['Different from alternatives', clamp(num(p.diff) / 5, 0, 1) * 15, 15]];
+  return `${stageHead('customer', 'Customer evidence')}
+  ${kv(pts.map(r => [r[0], `${r[1].toFixed(1)} / ${r[2]}`]))}
+  <div class="card flat" style="padding:12px 14px">
+    <h4>Effect on your forecast</h4>
+    ${kv([['You expect', `${Math.round(D.perDay)} customers a day`], ['Evidence-adjusted', `${Math.round(D.perDay * D.haircut)} a day`], ['Reduction', S.demand.haircut ? PCT(1 - D.haircut) : 'Off'], ['Outcome spread', D.sigma.toFixed(2)]])}</div>
+  ${notesFor('Customer')}`;
+}
+function readPlace() {
+  const D = A.D, r = A.rentRatio, ceil = A.rentMax;
+  const key = r === null ? '' : r <= ceil ? 'good' : r <= ceil * 1.5 ? 'warn' : 'critical';
+  const w = r === null ? 0 : clamp(r / (ceil * 2.5), 0, 1) * 100;
+  return `${stageHead('place', 'Lease reading')}
+  <div><div class="rowline"><div><div class="big">${r === null ? '—' : PCT(r, 1)}</div><div class="small muted">of year-two revenue goes to rent</div></div>${r === null ? '' : pillHTML(key, r <= ceil ? 'Within ceiling' : 'Above ceiling')}</div>
+  <div class="meter ${key}" style="margin-top:8px"><i style="width:${w}%"></i></div>
+  <div class="rowline small muted" style="margin-top:4px"><span>0%</span><span>Ceiling for ${esc(D.sector.label.toLowerCase())}: ${PCT(ceil)}</span></div></div>
+  ${kv([['Rent per month', money(D.rent)], ['Paid at signing', money(D.rentAdvance + D.deposit)], ['Full lease commitment', money(leaseTotal())], ['Owed if you quit at month 6', money(A.exposure)], ['Monthly sales to hold rent at ceiling', A.salesForRent ? money(A.salesForRent) : '—']])}
+  ${notesFor('Place')}
+  <div class="chart" data-chart="rent"></div>
+  <div class="small muted">Survival odds as rent moves from 50% to 150% of the offer.</div>`;
+}
+function readCapital() {
+  const D = A.D;
+  return `${stageHead('capital', 'Capital reading')}
+  <div class="chart" data-chart="capital"></div>
+  ${kv([['Listed costs to open', money(D.startupListed)], ['With overrun allowance', money(D.startup)], ['Lease deposit and rent paid in advance', money(D.deposit + D.rentAdvance)], ['Total raised', money(D.sources)], ['Cash left on opening day', money(D.cash0)], ['Needed (typical case)', A.hasData ? money(A.need50) : '—'], ['Needed (90% confidence)', A.hasData ? money(A.need90) : '—'], ['Gap to close', A.hasData ? money(A.gap90) : '—'], ['Your pay taken from capital', `${money(A.ownFromCap)} (${PCT(A.ownShare)})`]])}
+  ${notesFor('Capital')}`;
+}
+function readCalc() {
+  const D = A.D;
+  return `${stageHead('calc', 'Calculation reading')}
+  <div class="chart" data-chart="be"></div>
+  ${kv([['Profit on each sale', D.price ? `${money(D.cm)} (${PCT(D.cmPct)})` : '—'], ['Break-even customers a day', isFinite(A.bePerDay) && A.hasData ? Math.round(A.bePerDay) : '—'], ['Your evidence-adjusted forecast', A.hasData ? Math.round(A.fcPerDay) + ' a day' : '—'], ['Margin of safety', A.hasData && isFinite(A.beUnits) ? PCT(A.mos) : '—'], ['Expected break-even month', A.hasData ? (A.E.beMonth ? 'Month ' + A.E.beMonth : 'Not within 24 months') : '—'], ['Chance of break-even within 12 months', A.hasData ? PCT(A.mc.profit12) : '—'], ['Debt cover', A.dscr === null ? 'No loan' : A.dscr.toFixed(2)], ['Fixed costs per month (without rent)', money(D.fixedOther)]])}
+  ${notesFor('Calculation')}`;
+}
+function readCompass() {
+  const CK = checkinAnalysis(S, A);
+  if (!CK.status) return `<h3>Compass reading</h3><p class="muted">Add your first monthly check-in to see whether you are on course. Make sure Stage I has your correct opening month and year.</p>`;
+  const tr = CK.trend > 0.03 ? 'Improving' : CK.trend < -0.03 ? 'Slipping' : 'Flat';
+  const advice = CK.status.key === 'good' ? 'Keep your pace and keep recording. Protect cash during slow seasons.'
+    : CK.status.key === 'warn' ? 'You are close but not on plan. Find the biggest gap (customers, price or cost), fix one thing this month, and check in again. Delay any new spending until revenue is back above 95% of plan.'
+      : 'Act now. Cut non-essential spending, reduce or pause your own pay, and talk to your landlord and lenders early while you still have cash and choices.';
+  return `<div class="rowline"><h3>Compass reading</h3>${pillHTML(CK.status.key, CK.status.label)}</div>
+  ${kv([['Revenue against plan (last 3 months)', CK.avgRatio === null ? '—' : PCT(CK.avgRatio)], ['Trend', tr], ['Cash against plan', CK.cashRatio === null ? '—' : PCT(CK.cashRatio)], ['Recent monthly shortfall', CK.burn > 0 ? money(CK.burn) : 'None'], ['Months of cash at this pace', CK.runway === null ? 'Not burning cash' : CK.runway.toFixed(1)]])}
+  <div class="callout">${advice}</div>`;
+}
+
+function dashTop() {
+  const v = A.verdict;
+  $('#dash-ring').innerHTML = `<h4>Compass reading</h4><div class="rings" style="margin-top:8px">
+    <div class="ringbox">${ring(A.blank ? 0 : A.composite, 190, 'Compass reading', 'of 100', A.blank ? 'mute' : v.key)}</div>
+    <div style="display:grid;gap:10px;min-width:0;flex:1 1 180px">
+      <div>${pillHTML(A.blank ? '' : v.key, A.blank ? 'Not started' : v.label)}<p style="margin-top:8px">${A.blank ? 'Enter your numbers to get a reading.' : v.line}</p></div>
+      <div class="rowline"><span>Viability score</span><b>${A.blank ? '—' : Math.round(A.score) + ' / 100'}</b></div>
+      <div class="rowline"><span>Survival odds, 24 months</span><b>${A.hasData ? Math.round(A.survival) + '%' : '—'}</b></div>
+      <div class="rowline"><span>Break-even within 12 months</span><b>${A.hasData ? Math.round(A.mc.profit12 * 100) + '%' : '—'}</b></div>
+    </div></div>`;
+  const rows = [['creed', 'Creed', 'Purpose and readiness'], ['customer', 'Customer', 'Evidence of demand'], ['place', 'Place', 'Rent and lease'], ['capital', 'Capital', 'Size and discipline'], ['calc', 'Calculation', 'Margins and break-even']];
+  $('#dash-pillars').innerHTML = `<h4>The five stages</h4><div class="pillars" style="margin-top:10px">${rows.map(([k, n, s]) => {
+    const st = A.stageStatus[k], val = A.pillars[k];
+    return `<div class="pillar"><div class="pn">${n} <span>${s} · weight ${WEIGHTS[k]}%</span></div><div class="meter ${A.blank ? '' : st.key}"><i style="width:${A.blank ? 0 : val}%"></i></div><div style="display:flex;gap:8px;align-items:center;justify-content:flex-end"><span class="pv">${A.blank ? '—' : Math.round(val)}</span>${A.blank ? '' : pillHTML(st.key, st.label)}</div></div>`;
+  }).join('')}</div>`;
+  const order = ['Creed', 'Customer', 'Place', 'Capital', 'Calculation'];
+  $('#dash-notes').innerHTML = order.map(st => {
+    const n = A.notes.filter(x => x.stage === st);
+    return n.length ? `<h4 style="margin:14px 0 2px">${st}</h4>${n.map(x => `<div class="note"><span class="pill ${x.level}">${LV[x.level]}</span><p>${esc(x.text)}</p></div>`).join('')}` : '';
+  }).join('');
+}
+
+function renderActive() {
+  if (!A) return;
+  const map = { creed: readCreed, customer: readCustomer, place: readPlace, capital: readCapital, calc: readCalc, compass: readCompass };
+  if (map[TAB]) { const el = $('#rd-' + TAB); if (el) el.innerHTML = map[TAB](); }
+  if (TAB === 'commerce') dashTop();
+  const sg = $('#sigmaOut'); if (sg) sg.textContent = A.D.sigma.toFixed(2);
+  const sum1 = $('#sum_startup'); if (sum1) sum1.textContent = money(sum(S.startup, 'amount'));
+  const sum2 = $('#sum_sources'); if (sum2) sum2.textContent = money(sum(S.sources, 'amount'));
+  const sum3 = $('#sum_fixed'); if (sum3) sum3.textContent = money(sum(S.fixed, 'monthly'));
+  drawCharts();
+}
+/* ============================================================
+   PDF REPORT — jsPDF, Basmala drawn from the Amiri font via canvas
+   ============================================================ */
+const PW = 595.28, PH = 841.89, MX = 40, CW = PW - MX * 2;
+const hexRgb = h => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
+const P_GREEN = '#0f3d2e', P_GOLD = '#e3c372', P_GOLDINK = '#7d5a0b';
+const pdfSafe = s => String(s == null ? '' : s)
+  .replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[–—−]/g, '-')
+  .replace(/…/g, '...').replace(/[·•]/g, '-').replace(/™/g, '(TM)').replace(/×/g, 'x').replace(/÷/g, '/')
+  .replace(/[^\x20-\x7E -ÿ\n]/g, '');
+
+async function basmalaPng() {
+  const W = 1400, H = 170, cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  const c = cv.getContext('2d');
+  try { if (document.fonts && document.fonts.load) await document.fonts.load('80px Amiri', 'بِسْمِ'); } catch (e) { /* ignore */ }
+  c.fillStyle = '#e3c372'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.direction = 'rtl';
+  const ok = document.fonts && document.fonts.check && document.fonts.check('80px Amiri', 'بِسْمِ');
+  c.font = `${ok ? '' : 'normal '}84px ${ok ? 'Amiri' : '"Noto Naskh Arabic","Traditional Arabic",serif'}`;
+  c.fillText('بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ', W / 2, H / 2 + 6);
+  return cv.toDataURL('image/png');
+}
+
+async function makePdf() {
+  const btns = $$('[data-act="pdf"], #btnPdf');
+  const label = $('#btnPdf').textContent;
+  btns.forEach(b => b.disabled = true); $('#btnPdf').textContent = 'Preparing PDF…';
+  try {
+    if (!window.jspdf || !window.jspdf.jsPDF) throw new Error('The PDF library could not load. Check your internet connection and try again.');
+    A = analyse(S); A.blank = isBlank(S);
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'pt', format: 'a4', compress: true });
+    const D = A.D, today = new Date();
+    const dateStr = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    let y = 0;
+
+    const setC = h => doc.setTextColor(...hexRgb(h));
+    const fillC = h => doc.setFillColor(...hexRgb(h));
+    const drawC = h => doc.setDrawColor(...hexRgb(h));
+    const txt = (s, x, yy, o = {}) => {
+      doc.setFont('helvetica', o.bold ? 'bold' : 'normal'); doc.setFontSize(o.size || 10); setC(o.color || PDFPAL.ink);
+      const lines = o.w ? doc.splitTextToSize(pdfSafe(s), o.w) : [pdfSafe(s)];
+      doc.text(lines, x, yy, { align: o.align || 'left' });
+      return yy + lines.length * (o.lh || (o.size || 10) * 1.35);
+    };
+    const newPage = () => {
+      doc.addPage(); fillC(P_GREEN); doc.rect(0, 0, PW, 30, 'F');
+      txt('Madinah Viability Compass', MX, 20, { size: 10, bold: true, color: P_GOLD });
+      txt(S.meta.venture || 'Untitled venture', PW - MX, 20, { size: 9, color: '#cfe0d5', align: 'right' });
+      y = 56;
+    };
+    const need = h => { if (y + h > PH - 56) newPage(); };
+    const h2 = (s) => { need(40); y = txt(s, MX, y + 6, { size: 14, bold: true, color: P_GREEN }); drawC(P_GOLD); doc.setLineWidth(1.2); doc.line(MX, y - 6, MX + 46, y - 6); y += 6; };
+    const para = (s, o = {}) => { const lines = doc.splitTextToSize(pdfSafe(s), o.w || CW); need(lines.length * 13 + 4); y = txt(s, o.x || MX, y, { size: o.size || 10, color: o.color || PDFPAL.ink2, w: o.w || CW, bold: o.bold }); y += 4; };
+    const kvPdf = (rows, x, w, yy) => {
+      let cy = yy;
+      rows.forEach(([a, b]) => {
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(10);
+        const la = doc.splitTextToSize(pdfSafe(a), w * 0.62);
+        const hh = Math.max(la.length, 1) * 13;
+        txt(a, x, cy, { size: 10, color: PDFPAL.ink2, w: w * 0.62 });
+        txt(b, x + w, cy, { size: 10, bold: true, align: 'right' });
+        drawC(PDFPAL.grid); doc.setLineWidth(0.5); doc.line(x, cy + hh - 8, x + w, cy + hh - 8);
+        cy += hh + 2;
+      });
+      return cy;
+    };
+    const chartImg = async (svgFn, w, h, caption) => {
+      PDFMODE = true; let svg; try { svg = svgFn(w, h); } finally { PDFMODE = false; }
+      const png = await svgToPng(svg, w, h, 2);
+      const ih = CW * h / w; need(ih + (caption ? 44 : 10));
+      if (caption) { y = txt(caption[0], MX, y + 4, { size: 11.5, bold: true, color: P_GREEN }); y = txt(caption[1], MX, y, { size: 9, color: PDFPAL.mute, w: CW }); y += 2; }
+      doc.addImage(png, 'PNG', MX, y, CW, ih); y += ih + 12;
+    };
+    const table = (cols, rows) => {
+      const rh = 16; need(rh * 2);
+      fillC('#eaf0ea'); doc.rect(MX, y, CW, rh, 'F');
+      let x = MX; cols.forEach(c => { txt(c.label, c.align === 'right' ? x + c.w - 4 : x + 4, y + 11, { size: 8.5, bold: true, color: PDFPAL.mute, align: c.align }); x += c.w; });
+      y += rh;
+      rows.forEach(r => {
+        need(rh + 2); x = MX;
+        cols.forEach((c, i) => { txt(String(r[i] ?? ''), c.align === 'right' ? x + c.w - 4 : x + 4, y + 11, { size: 9.5, align: c.align, w: c.w - 8, lh: 11 }); x += c.w; });
+        drawC(PDFPAL.grid); doc.setLineWidth(0.5); doc.line(MX, y + rh, MX + CW, y + rh); y += rh;
+      });
+      y += 8;
+    };
+
+    /* ---------- page 1 : cover and reading ---------- */
+    fillC(P_GREEN); doc.rect(0, 0, PW, 138, 'F'); fillC(P_GOLD); doc.rect(0, 138, PW, 3, 'F');
+    const bas = await basmalaPng(); doc.addImage(bas, 'PNG', PW / 2 - 150, 12, 300, 300 * 170 / 1400);
+    txt('CREED-TO-COMMERCE(TM) VIABILITY REPORT', MX, 82, { size: 9, bold: true, color: P_GOLD });
+    txt('Madinah Viability Compass', MX, 108, { size: 26, bold: true, color: '#f4f0e1' });
+    txt(dateStr, PW - MX, 108, { size: 10, color: '#cfe0d5', align: 'right' });
+    y = 168;
+    y = txt(S.meta.venture || 'Untitled venture', MX, y, { size: 17, bold: true, color: P_GREEN });
+    const sub = [S.meta.owner && 'Owner: ' + S.meta.owner, D.sector.label, S.meta.district, 'Opening ' + MONTH_NAMES[num(S.meta.openMonth) - 1] + ' ' + S.meta.openYear].filter(Boolean).join('   |   ');
+    y = txt(sub, MX, y + 2, { size: 9.5, color: PDFPAL.mute, w: CW }) + 4;
+    if (S.sample) { fillC('#f5ecd2'); doc.rect(MX, y, CW, 22, 'F'); txt('This report uses example data for an imaginary cafe. Replace it with your own numbers before relying on it.', MX + 8, y + 14, { size: 9, color: P_GOLDINK }); y += 32; }
+    // reading box
+    const vcol = PDFPAL[A.verdict.key];
+    fillC('#f1f5f0'); drawC(PDFPAL.line); doc.setLineWidth(0.8); doc.roundedRect(MX, y, CW, 112, 6, 6, 'FD');
+    fillC(vcol); doc.rect(MX, y, 6, 112, 'F');
+    txt('COMPASS READING', MX + 22, y + 24, { size: 9, bold: true, color: PDFPAL.mute });
+    txt(A.blank ? 'Not started' : A.verdict.label, MX + 22, y + 52, { size: 22, bold: true, color: vcol });
+    txt(A.blank ? 'No numbers have been entered yet.' : A.verdict.line, MX + 22, y + 72, { size: 10, color: PDFPAL.ink2, w: 250 });
+    const bigs = [['Composite', A.blank ? '-' : Math.round(A.composite)], ['Viability score', A.blank ? '-' : Math.round(A.score)], ['Survival odds', A.hasData ? Math.round(A.survival) + '%' : '-']];
+    bigs.forEach((b, i) => { const bx = MX + 290 + i * 76; txt(String(b[1]), bx, y + 52, { size: 24, bold: true, color: P_GREEN }); txt(b[0], bx, y + 68, { size: 8, color: PDFPAL.mute, bold: true }); });
+    y += 124;
+    h2('The five stages');
+    const pn = [['creed', 'I  Creed'], ['customer', 'II  Customer'], ['place', 'III  Place'], ['capital', 'IV  Capital'], ['calc', 'V  Calculation']];
+    pn.forEach(([k, n]) => {
+      need(24); const st = A.stageStatus[k], v = A.pillars[k];
+      txt(n, MX, y + 11, { size: 10.5, bold: true }); txt('weight ' + WEIGHTS[k] + '%', MX + 108, y + 11, { size: 8.5, color: PDFPAL.mute });
+      fillC(PDFPAL.grid); doc.roundedRect(MX + 170, y + 2, 230, 9, 4, 4, 'F');
+      if (!A.blank) { fillC(PDFPAL[st.key]); doc.roundedRect(MX + 170, y + 2, Math.max(8, 230 * v / 100), 9, 4, 4, 'F'); }
+      txt(A.blank ? '-' : String(Math.round(v)), MX + 416, y + 11, { size: 10.5, bold: true, align: 'right' });
+      txt(A.blank ? '' : st.label, MX + CW, y + 11, { size: 10, bold: true, color: PDFPAL[st.key], align: 'right' });
+      y += 20;
+    });
+    y += 2; h2('Key numbers');
+    const left = [['Monthly rent', money(D.rent)], ['Rent share of year-two revenue', A.rentRatio === null ? '-' : PCT(A.rentRatio, 1) + ' (ceiling ' + PCT(A.rentMax) + ')'], ['Cash needed at signing', money(D.rentAdvance + D.deposit)], ['Capital raised', money(D.sources)], ['Capital needed, 90% confidence', A.hasData ? money(A.need90) : '-'], ['Gap to close', A.hasData ? money(A.gap90) : '-']];
+    const right = [['Profit on each sale', D.price ? money(D.cm) + ' (' + PCT(D.cmPct) + ')' : '-'], ['Break-even customers a day', A.hasData && isFinite(A.bePerDay) ? String(Math.round(A.bePerDay)) : '-'], ['Evidence-adjusted forecast', A.hasData ? Math.round(A.fcPerDay) + ' a day' : '-'], ['Expected break-even month', A.hasData && A.E.beMonth ? 'Month ' + A.E.beMonth : '-'], ['Evidence score', Math.round(D.evidence) + ' / 100'], ['Your pay taken from capital', money(A.ownFromCap)]];
+    const ky = y; const y1 = kvPdf(left, MX, 244, ky), y2 = kvPdf(right, MX + 271, 244, ky); y = Math.max(y1, y2) + 2;
+    const crit = A.notes.filter(n => n.level === 'critical').slice(0, 3);
+    if (crit.length) { h2('First things to fix'); crit.forEach(n => { need(40); const lines = doc.splitTextToSize(pdfSafe(n.text), CW - 74); txt(n.stage.toUpperCase(), MX, y + 9, { size: 8, bold: true, color: PDFPAL.critical }); txt(n.text, MX + 74, y + 9, { size: 9.5, w: CW - 74, color: PDFPAL.ink2 }); y += lines.length * 13 + 6; }); }
+
+    /* ---------- charts ---------- */
+    newPage();
+    h2('Will your cash last? Twenty-four months of simulated futures');
+    await chartImg((w, h) => chFan(S, A, w, h), 640, 300, ['Cash balance: middle 80% of 500 simulated futures', 'If the lower edge dips below zero, in some futures you run out of money. Solid line is the median.']);
+    await chartImg((w, h) => chCapital(S, A, w, h), 640, 180, ['Capital needed versus capital raised', 'Needed = enough to keep cash above zero in 9 of 10 simulated futures.']);
+    await chartImg((w, h) => chBreakeven(S, A, w, h), 640, 300, ['Break-even', 'Where revenue crosses total cost, including rent, your pay and loan repayments.']);
+    await chartImg((w, h) => chRent(S, A, w, h), 640, 270, ['Rent stress test', 'Chance of surviving 24 months if rent were higher or lower than the offer.']);
+    await chartImg((w, h) => chMonthly(S, A, w, h), 640, 260, ['Expected result each month', 'After rent, loan repayments and owner pay, on the expected path.']);
+    await chartImg((w, h) => chTornado(S, A, w, h), 640, 340, ['What moves your numbers most', 'Change in cash at month 24 when each assumption moves.']);
+
+    /* ---------- coach notes ---------- */
+    newPage(); h2('Coach notes');
+    ['Creed', 'Customer', 'Place', 'Capital', 'Calculation'].forEach(st => {
+      const ns = A.notes.filter(n => n.stage === st); if (!ns.length) return;
+      need(40); y = txt(st, MX, y + 6, { size: 11, bold: true, color: P_GREEN }) + 2;
+      ns.forEach(n => {
+        const lines = doc.splitTextToSize(pdfSafe(n.text), CW - 64); need(lines.length * 13 + 8);
+        txt(LV[n.level].toUpperCase(), MX, y + 9, { size: 8, bold: true, color: PDFPAL[n.level] });
+        txt(n.text, MX + 64, y + 9, { size: 9.5, w: CW - 64, color: PDFPAL.ink2 }); y += lines.length * 13 + 6;
+      });
+      y += 4;
+    });
+
+    /* ---------- check-ins ---------- */
+    const CK = checkinAnalysis(S, A);
+    if (CK.status) {
+      newPage(); h2('Compass check-ins: plan versus actual');
+      para(`Reading: ${CK.status.label}. Revenue is ${CK.avgRatio === null ? 'n/a' : PCT(CK.avgRatio)} of plan over the last three months.`, { bold: true, color: PDFPAL[CK.status.key] });
+      table([{ label: 'Month', w: 90 }, { label: 'Revenue', w: 85, align: 'right' }, { label: 'Plan revenue', w: 90, align: 'right' }, { label: '% of plan', w: 65, align: 'right' }, { label: 'Costs paid', w: 85, align: 'right' }, { label: 'Cash in bank', w: 100, align: 'right' }],
+        CK.rows.map(r => [r.month, Math.round(num(r.revenue)).toLocaleString('en-US'), r.planRev === null ? '-' : Math.round(r.planRev).toLocaleString('en-US'), r.revRatio === null ? '-' : PCT(r.revRatio), Math.round(num(r.costs)).toLocaleString('en-US'), Math.round(num(r.cash)).toLocaleString('en-US')]));
+      await chartImg((w, h) => chPlanActual(S, A, CK, w, h, 'rev'), 640, 250, ['Revenue: plan versus actual', 'Dashed line is the plan; dots are real months.']);
+      await chartImg((w, h) => chPlanActual(S, A, CK, w, h, 'cash'), 640, 250, ['Cash: plan versus actual', 'A widening gap is the earliest warning.']);
+    }
+
+    /* ---------- assumptions ---------- */
+    newPage(); h2('Your assumptions');
+    const p = S.problem, L = S.lease;
+    y = txt('Customer and evidence', MX, y + 4, { size: 11, bold: true, color: P_GREEN }) + 2;
+    if (p.target) para('Customer: ' + p.target); if (p.statement) para('Problem: ' + p.statement);
+    y = kvPdf([['Customer interviews', String(num(p.interviews))], ['Said problem is urgent', num(p.urgentPct) + '%'], ['Said they would pay', num(p.willPayPct) + '%'], ['Paid pre-sales', String(num(p.presales))], ['Difference from alternatives (1-5)', String(num(p.diff))]], MX, CW, y) + 6;
+    y = txt('Lease', MX, y + 4, { size: 11, bold: true, color: P_GREEN }) + 2;
+    y = kvPdf([['Rent per month', money(L.rent)], ['Paid every', L.payEvery + ' month(s) in advance'], ['Lease length', L.term + ' years'], ['Yearly increase', L.esc + '%'], ['Deposit', L.depositMonths + ' month(s)'], ['Exit option', L.exit === 'clause' ? 'Break clause' : 'None']], MX, CW, y) + 6;
+    need(60); y = txt('Costs to open', MX, y + 4, { size: 11, bold: true, color: P_GREEN }) + 4;
+    table([{ label: 'Item', w: 250 }, { label: 'Kind', w: 140 }, { label: 'SAR', w: 125, align: 'right' }], S.startup.map(r => [r.name, (START_TYPES.find(t => t[0] === r.type) || [0, r.type])[1], Math.round(num(r.amount)).toLocaleString('en-US')]));
+    y = kvPdf([['Listed total', money(D.startupListed)], ['Overrun allowance ' + S.capital.overrun + '%', money(D.startup - D.startupListed)], ['Total with allowance', money(D.startup)]], MX, CW, y) + 6;
+    need(60); y = txt('Sources of money', MX, y + 4, { size: 11, bold: true, color: P_GREEN }) + 4;
+    table([{ label: 'Source', w: 185 }, { label: 'Type', w: 120 }, { label: 'SAR', w: 90, align: 'right' }, { label: 'Rate', w: 55, align: 'right' }, { label: 'Months', w: 65, align: 'right' }], S.sources.map(r => [r.name, (SRC_KINDS.find(t => t[0] === r.kind) || [0, r.kind])[1], Math.round(num(r.amount)).toLocaleString('en-US'), r.kind === 'debt' ? num(r.rate) + '%' : '-', r.kind === 'debt' ? String(num(r.term)) : '-']));
+    y = kvPdf([['Owner pay per month', money(S.owner.draw) + ' from month ' + S.owner.start]], MX, CW, y) + 6;
+    need(60); y = txt('Unit economics and fixed costs', MX, y + 4, { size: 11, bold: true, color: P_GREEN }) + 2;
+    y = kvPdf([['Average price per sale', money(S.demand.price)], ['Direct cost per sale', money(S.demand.varCost)], ['Customers per day (mature)', String(num(S.demand.perDay))], ['Days open per month', String(num(S.demand.days))], ['Months to maturity', String(num(S.demand.ramp))], ['Evidence adjustment', S.demand.haircut ? 'On (x' + D.haircut.toFixed(2) + ')' : 'Off'], ['Outcome spread', D.sigma.toFixed(2)]], MX, CW, y) + 6;
+    table([{ label: 'Monthly fixed cost', w: 340 }, { label: 'SAR per month', w: 175, align: 'right' }], S.fixed.map(r => [r.name, Math.round(num(r.monthly)).toLocaleString('en-US')]));
+
+    /* ---------- method ---------- */
+    need(150); h2('How to read this report');
+    para('Viability score weights five stages: Creed 10%, Customer 25%, Place 20%, Capital 25% and Calculation 20%. Survival odds come from 500 simulated futures that vary customer volume, ramp-up speed, costs and start-up overruns. The compass reading is 50% score and 50% survival odds. Capital needed for 90% confidence is the amount that keeps the bank balance above zero in nine of ten simulated futures.');
+    para('Sector rent ceilings and seasonal shapes are working rules of thumb and illustrative patterns. Prices are assumed to exclude VAT, and zakat and other taxes are not modelled.');
+    para('This report is an educational estimate built from the numbers entered. It is not financial, legal or investment advice and cannot promise any result. Confirm rent, licensing and financing terms with the landlord, the relevant authorities and a qualified adviser before you sign.', { size: 9, color: PDFPAL.mute });
+
+    /* ---------- footers ---------- */
+    const n = doc.getNumberOfPages();
+    for (let i = 1; i <= n; i++) {
+      doc.setPage(i); fillC(P_GREEN); doc.rect(0, PH - 34, PW, 34, 'F'); fillC(P_GOLD); doc.rect(0, PH - 34, PW, 1.5, 'F');
+      txt('Creed-to-Commerce(TM)  |  The Balanced Middle Path Academy, LLC', MX, PH - 14, { size: 8.5, bold: true, color: P_GOLD });
+      txt(`${dateStr}  |  Page ${i} of ${n}`, PW - MX, PH - 14, { size: 8.5, color: '#cfe0d5', align: 'right' });
+    }
+    const slug = (S.meta.venture || 'report').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').slice(0, 40) || 'report';
+    doc.save(`Madinah-Viability-Compass_${slug}_${today.toISOString().slice(0, 10)}.pdf`);
+    toast('Your PDF report is ready. Check your downloads.');
+  } catch (e) {
+    console.error(e); toast(e.message || 'The PDF could not be created.', 5000);
+  } finally {
+    PDFMODE = false; btns.forEach(b => b.disabled = false); $('#btnPdf').textContent = label;
+  }
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script defer>
+/* ============================================================
+   INIT, theme, backup
+   ============================================================ */
+function initTheme() {
+  const btn = $('#btnTheme');
+  const apply = t => {
+    if (t === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', t);
+    btn.textContent = 'Theme: ' + t;
+  };
+  let t = lsGet(THEME_KEY) || 'auto'; apply(t);
+  btn.addEventListener('click', () => { t = t === 'auto' ? 'light' : t === 'light' ? 'dark' : 'auto'; lsSet(THEME_KEY, t); apply(t); });
+}
+function initBackup() {
+  const m = $('#modalBackup'), ta = $('#mbText');
+  const open = () => { ta.value = JSON.stringify(S, null, 1); m.hidden = false; $('#mbClose').focus(); };
+  const close = () => { m.hidden = true; };
+  $('#btnBackup').addEventListener('click', open);
+  $('#mbClose').addEventListener('click', close);
+  m.addEventListener('click', e => { if (e.target === m) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.hidden) close(); });
+  $('#mbDownload').addEventListener('click', () => {
+    try {
+      const blob = new Blob([JSON.stringify(S, null, 1)], { type: 'application/json' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+      a.download = 'madinah-viability-compass-backup.json'; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000); toast('Backup file download started.');
+    } catch (e) { toast('Download is not available here. Use Copy backup text instead.', 4000); }
+  });
+  $('#mbCopy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(ta.value); toast('Backup text copied.'); }
+    catch (e) { ta.focus(); ta.select(); toast('Select and copy the text manually.', 3500); }
+  });
+  const importText = txt => {
+    try {
+      const o = JSON.parse(txt); if (!o || typeof o !== 'object' || !o.meta) throw new Error('bad');
+      replaceState(fillDefaults(blankState(), o)); close(); toast('Backup restored.');
+    } catch (e) { toast('That is not a valid backup. Paste the full backup text.', 4000); }
+  };
+  $('#mbRestore').addEventListener('click', () => importText(ta.value));
+  $('#mbFile').addEventListener('change', e => {
+    const f = e.target.files[0]; if (!f) return;
+    const r = new FileReader(); r.onload = () => importText(String(r.result)); r.readAsText(f); e.target.value = '';
+  });
+  $('#mbSample').addEventListener('click', () => { replaceState(sampleState()); close(); toast('Example data loaded.'); });
+  let armed = null;
+  $('#mbReset').addEventListener('click', e => {
+    const b = e.currentTarget;
+    if (!armed) { armed = setTimeout(() => { armed = null; b.textContent = 'Erase everything'; }, 4000); b.textContent = 'Press again to erase'; return; }
+    clearTimeout(armed); armed = null; b.textContent = 'Erase everything';
+    lsSet(KEY, ''); replaceState(blankState()); close(); setTab('creed', true); toast('Everything erased. You have a clean start.');
+  });
+}
+function init() {
+  S = loadState();
+  buildRail(); buildPanels();
+  ['startup', 'sources', 'fixed', 'checkins'].forEach(renderTable);
+  syncInputs($('#panels')); applyUncState();
+  document.addEventListener('input', onInput);
+  document.addEventListener('change', onInput);
+  document.addEventListener('click', onClick);
+  initTip(); initTheme(); initBackup();
+  $('#btnPdf').addEventListener('click', makePdf);
+  $('#btnClear').addEventListener('click', clearSample);
+  $('#btnKeep').addEventListener('click', () => { S.sample = false; saveSoon(); $('#banner').hidden = true; toast('Notice hidden. Your numbers are kept and saved.'); });
+  let rz = null; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { if (A) drawCharts(); }, 150); });
+  const valid = ['creed', 'customer', 'place', 'capital', 'calc', 'commerce', 'compass', 'method'];
+  const h = location.hash.slice(1);
+  setTab(valid.includes(h) ? h : 'creed', false);
+  refresh();
+  window.addEventListener('hashchange', () => { const x = location.hash.slice(1); if (valid.includes(x)) setTab(x, false); });
+  document.fonts && document.fonts.ready && document.fonts.ready.then(() => { if (A) drawCharts(); });
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+</script>
+</body>
+</html>
